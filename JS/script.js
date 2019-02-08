@@ -18,6 +18,7 @@ function buyAutoclick() {
                 document.getElementById('affichage').innerHTML = "Score:" + score;
             }, 1000);
         };
+        document.getElementById('autoclic').innerHTML = "AutoClick On";
 }
 
 document.getElementById("multiplier").addEventListener("click", function augmenterMultiplicateur() {
@@ -31,3 +32,4 @@ document.getElementById("multiplier").addEventListener("click", function augment
       alert("pas assez");
     }
 });
+
