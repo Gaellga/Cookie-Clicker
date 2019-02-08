@@ -7,6 +7,23 @@ document.getElementById('clic').addEventListener('click', function (){
     score+=multiplicateur;
 document.getElementById('affichage').innerHTML = "Score:" + score;
  });
+
+
+
+  document.getElementById("multiplier").addEventListener("click", function augmenterMultiplicateur() {
+
+      if (score>=50) {
+      multiplicateur++;
+      score = score -(prix * multiplicateur);
+      var x = multiplicateur+1
+      document.getElementById("multiplier").innerHTML= "Multiplier x "+x;
+      }
+      else {
+        alert("Your score isn't high enough!");
+      }
+  });
+
+
 var alreadyPlayed = false;
 function buyAutoclick() {
     if (alreadyPlayed=== false && score >= 10) {
@@ -24,14 +41,4 @@ function buyAutoclick() {
         };
 }
 
-document.getElementById("multiplier").addEventListener("click", function augmenterMultiplicateur() {
 
-    if (score>=50) {
-    multiplicateur++;
-    score = score -(prix * multiplicateur);
-    document.getElementById("multiplier").innerHTML= "Multiplier x "+multiplicateur;
-    }
-    else {
-      alert("pas assez");
-    }
-});
