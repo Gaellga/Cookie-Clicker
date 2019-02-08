@@ -1,7 +1,10 @@
 var score = 0;
+var prix = 50;
+var multiplicateur=0;
  
 document.getElementById('clic').addEventListener('click', function (){
-score =score+1;
+    score++;
+    score+=multiplicateur
 document.getElementById('affichage').innerHTML = "Score:" + score;
  });
 
@@ -16,3 +19,15 @@ function buyAutoclick() {
             }, 1000);
         };
 }
+
+document.getElementById("multiplier").addEventListener("click", function augmenterMultiplicateur() {
+
+    if (score>=50) {
+    multiplicateur++;
+    score = score -(prix * multiplicateur);
+    document.getElementById("multiplier").innerHTML= "Multiplicateur:"+multiplicateur;
+    }
+    else {
+      alert("pas assez");
+    }
+});
