@@ -24,7 +24,6 @@ document.getElementById("multiplier").addEventListener("click", function augment
      score = score -prix;
      prix = prix*2;
    }
-
        var x = multiplicateur+1
        document.getElementById("multiplier").innerHTML= "Multiplier x "+x +"<br> prochain prix" +":"+ prix;
      }
@@ -32,6 +31,7 @@ document.getElementById("multiplier").addEventListener("click", function augment
        alert("pas assez de cookies pour un multiplicateur");
      }
    });
+
 //autoclick
 var alreadyPlayed = false;
 
