@@ -16,7 +16,7 @@ img {
 button {
     padding: 2%;
     width: 400px;
-    font-size: 3em;
+    font-size: 2.8em;
     margin : 2%;
 }
 
@@ -36,4 +36,9 @@ button {
 
 #containerButtons {
     display: inline-flex;
+}
+
+#autoclic {
+    background-color: "orange";
+    color: orange;
 }
