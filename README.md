@@ -2,9 +2,9 @@
 
 ![cookie utilisé pour le jeu](img/smallcookie.png "Clique sur le cookie!")
 
-### Mini jeu vidéo réalisé en février 2019 dans le cadre de la formation BeCode
-### Première intégration de Javascript dans une application interactive  
-### Projet terminé 
+* Mini jeu vidéo réalisé en février 2019 dans le cadre de la formation BeCode  
+* Première intégration de Javascript dans une application interactive  
+* Projet terminé 
 
 ## Lien vers les consignes
 https://github.com/becodeorg/BXL-Johnson-3.9/tree/master/Projets/coockie-clicker
