@@ -13,16 +13,25 @@ document.getElementById('clic').addEventListener('click', function (){
 
  //multiplicateur
 document.getElementById("multiplier").addEventListener("click", function augmenterMultiplicateur() {
-    if (score>=50) {
-      multiplicateur++;
-      score = score -(prix * multiplicateur);
-      var x = multiplicateur+1
-      document.getElementById("multiplier").innerHTML= "Multiplier x "+x;
-    } 
-    else {
-        alert("Your score isn't high enough!");
-    }
-});
+
+      if (score>=50) {
+       multiplicateur++;
+
+       if (score-prix<0){
+         alert("Vous n'avez pas assez de cookies");
+       }
+       else {
+     score = score -prix;
+     prix = prix*2;
+   }
+
+       var x = multiplicateur+1
+       document.getElementById("multiplier").innerHTML= "Multiplier x "+x +"<br> prochain prix" +":"+ prix;
+     }
+     else {
+       alert("pas assez de cookies pour un multiplicateur");
+     }
+   });
 //autoclick
 var alreadyPlayed = false;
 
