@@ -1,7 +1,9 @@
 var score = 0;
 var prix = 50;
-var multiplicateur = 0;
- 
+var multiplicateur=0;
+var currenttime = new Date();
+var currentsec = currenttime.getSeconds();
+
 //clic cookie
 document.getElementById('clic').addEventListener('click', function (){
     score++;
@@ -16,11 +18,11 @@ document.getElementById("multiplier").addEventListener("click", function augment
       score = score -(prix * multiplicateur);
       var x = multiplicateur+1
       document.getElementById("multiplier").innerHTML= "Multiplier x "+x;
-    } else {
+    } 
+    else {
         alert("Your score isn't high enough!");
     }
 });
-
 //autoclick
 var alreadyPlayed = false;
 
@@ -37,4 +39,5 @@ function buyAutoclick() {
         }, 1000);
         document.getElementById('autoclic').innerHTML = "Autoclick On";
     };
-}
+};
+

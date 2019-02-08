@@ -37,8 +37,13 @@ button {
 #containerButtons {
     display: inline-flex;
 }
-
 #autoclic {
     background-color: "orange";
     color: orange;
+}
+.nobonus {
+	background-color: #ff0000;
+}
+.bonus {
+	background-color: #00FF00;
 }
