@@ -8,13 +8,16 @@ var currentsec = currenttime.getSeconds();
 //clic cookie
 
 function clic() {
-    document.getElementById('clic').addEventListener('click', function (){
         score++;
         score+=multiplicateur;
         document.getElementById('affichage').innerHTML = "Score:" + score;
+    }
+
+    document.getElementById('clic').addEventListener('click', function (){
+        clic();
     });
-}
-clic();
+
+
 
  //multiplicateur
 document.getElementById("multiplier").addEventListener("click", function augmenterMultiplicateur() {
@@ -36,7 +39,8 @@ document.getElementById("multiplier").addEventListener("click", function augment
         }
 
     else {
-        alert("You have to create more cookies first!");
+        var end = document.getElementById("multiplier");
+        end.disabled = false;
     }
    });
 
