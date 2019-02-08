@@ -5,9 +5,14 @@ score =score+1;
 document.getElementById('affichage').innerHTML = "Score:" + score;
  });
 
-setInterval(function(){
-        if (score >= 20) {
-            score++;
+function buyAutoclick() {
+    if (score >= 10) {
+            score = score - 10;
+            setInterval(function(){
+                if (score >= 20) {
+                    score++;
+                };
+                document.getElementById('affichage').innerHTML = "Score:" + score;
+            }, 1000);
         };
-    document.getElementById('affichage').innerHTML = "Score:" + score;
-}, 1000);
+}
