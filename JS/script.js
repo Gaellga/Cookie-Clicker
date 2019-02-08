@@ -1,5 +1,6 @@
 var score = 0;
 var prix = 50;
+var prixAuto = 30;
 var multiplicateur=0;
 var currenttime = new Date();
 var currentsec = currenttime.getSeconds();
@@ -18,31 +19,32 @@ clic();
  //multiplicateur
 document.getElementById("multiplier").addEventListener("click", function augmenterMultiplicateur() {
 
-      if (score>=50) {
+    if (score>=50) {
        multiplicateur++;
 
        if (score-prix<0){
          alert("You have to create more cookies first!");
        }
        else {
-     score = score -prix;
-     prix = prix*2;
-   }
+        score = score -prix;
+        prix = prix*2;
+        }
        var x = multiplicateur+1
        document.getElementById("multiplier").innerHTML= "Multiplier x "+x
        document.getElementById("nextMulti").innerHTML= "Buy: " + prix + " cookies";
        document.getElementById('affichage').innerHTML = "Score:" + score;
-     }
-     else {
-       alert("You have to create more cookies first!");
-     }
+        }
+
+    else {
+        alert("You have to create more cookies first!");
+    }
    });
 
 //autoclick
 var alreadyPlayed = false;
 
 function buyAutoclick() {
-    if (alreadyPlayed=== false && score-prix<0){
+    if (alreadyPlayed=== false && score-prixAuto<0){
         alert("You have to create more cookies first!");
       }
       else {
@@ -52,8 +54,7 @@ function buyAutoclick() {
                 if (score >= 200) {
                     clic();
                 };
-                alreadyPlayed = true;
-                score != score - 500;    
+                alreadyPlayed = true;  
                 document.getElementById('affichage').innerHTML = "Score:" + score;
             }, 1000);
             document.getElementById('autoclic').innerHTML = "Autoclick On";
