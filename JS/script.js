@@ -4,7 +4,7 @@ var multiplicateur=0;
  
 document.getElementById('clic').addEventListener('click', function (){
     score++;
-    score+=multiplicateur
+    score+=multiplicateur;
 document.getElementById('affichage').innerHTML = "Score:" + score;
  });
 
@@ -25,7 +25,7 @@ document.getElementById("multiplier").addEventListener("click", function augment
     if (score>=50) {
     multiplicateur++;
     score = score -(prix * multiplicateur);
-    document.getElementById("multiplier").innerHTML= "Multiplicateur:"+multiplicateur;
+    document.getElementById("multiplier").innerHTML= "Multiplier x "+multiplicateur;
     }
     else {
       alert("pas assez");
