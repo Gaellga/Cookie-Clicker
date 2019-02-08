@@ -1,5 +1,6 @@
 body {
     font-family: 'Courier New', Courier, monospace;
+    background-color: "red";
 }
 
 h1 {
@@ -44,6 +45,20 @@ button {
 .nobonus {
 	background-color: #ff0000;
 }
+
 .bonus {
 	background-color: #00FF00;
+}
+
+#nextMulti {
+    margin-left: -43%;
+}
+
+#buyBonus {
+    margin-top: -0.9%;
+}
+
+#buyAuto {
+    margin-left: +43%;
+    margin-top: -0.9%;
 }
