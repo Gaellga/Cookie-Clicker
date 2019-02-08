@@ -7,15 +7,19 @@ document.getElementById('clic').addEventListener('click', function (){
     score+=multiplicateur;
 document.getElementById('affichage').innerHTML = "Score:" + score;
  });
-
+var alreadyPlayed = false;
 function buyAutoclick() {
-    if (score >= 10) {
-            score = score - 10;
-            setInterval(function(){
+    if (alreadyPlayed=== false && score >= 10) {
+        
+        score = score - 10;
+
+        setInterval(function(){
                 if (score >= 20) {
                     score++;
                 };
-                document.getElementById('affichage').innerHTML = "Score:" + score;
+            alreadyPlayed = true;
+            score != score - 10;    
+    document.getElementById('affichage').innerHTML = "Score:" + score;
             }, 1000);
         };
 }
