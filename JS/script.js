@@ -1,6 +1,8 @@
 var score = 0;
 var prix = 50;
 var multiplicateur=0;
+var currenttime = new Date();
+var currentsec = currenttime.getSeconds();
  
 document.getElementById('clic').addEventListener('click', function (){
     score++;
@@ -32,6 +34,5 @@ document.getElementById('affichage').innerHTML = "Score:" + score;
             }, 1000);
             document.getElementById('autoclic').innerHTML = "AutoClick On";
         };
-    }
-
+    };
 
