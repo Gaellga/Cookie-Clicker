@@ -11,7 +11,8 @@ https://github.com/becodeorg/BXL-Johnson-3.9/tree/master/Projets/coockie-clicker
 
 ## Membres de la team
 
-* Dorian Vanderheyden | [Github](https://github.com/dorianbe)  
+* Dorian Vanderheyden | [Github](https://github.com/dorianbec)  
+
 * Gaëlle Gaban | [Github](https://github.com/Gaellga)    
 
 * Ilaria Fantini | [Github](https://github.com/IlariaFa)    
