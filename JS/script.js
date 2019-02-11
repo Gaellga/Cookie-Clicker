@@ -26,7 +26,8 @@ document.getElementById("multiplier").addEventListener("click", function augment
        multiplicateur++;
 
        if (score-prix<0){
-         alert("You have to create more cookies first!");
+        var end = document.getElementById("multiplier");
+        end.disabled = false;
        }
        else {
         score = score -prix;
@@ -39,7 +40,6 @@ document.getElementById("multiplier").addEventListener("click", function augment
         }
 
     else {
-        var end = document.getElementById("multiplier");
         end.disabled = false;
     }
    });
@@ -49,7 +49,7 @@ var alreadyPlayed = false;
 
 function buyAutoclick() {
     if (alreadyPlayed=== false && score-prixAuto<0){
-        alert("You have to create more cookies first!");
+        console.log("You have to create more cookies first!");
       }
       else {
         if (alreadyPlayed=== false && score >= 500) {
