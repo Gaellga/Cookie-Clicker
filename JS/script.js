@@ -72,14 +72,13 @@ document.getElementById("bonus").addEventListener("click", function() {
 				document.getElementById("bonus").innerHTML = sec;
 				if(sec === 0) {
 					clearInterval(interval);
-					console.log("ouou");
 					document.getElementById("bonus").innerHTML = "Get Bonus!";
       				document.getElementById("bonus").className = "bonus";
 				}
 			}, 1000);
 		}		
 		else {
-     	alert("Your score isn't high enough!");
+     	console.log("Your score isn't high enough!");
     	} 	   
 });
    
