@@ -31,26 +31,20 @@ function clic() {
  //multiplicateur
 document.getElementById("multiplier").addEventListener("click", function augmenterMultiplicateur() {
 
-    if (score>=50) {
-       multiplicateur++;
-
        if (score-prix<0){
-        var end= document.getElementById("multiplier");
-        end.disabled = false;
-       }
-       else {
-        score = score -prix;
-        prix = prix*2;
-        }
-       var x = multiplicateur+1
-       document.getElementById("multiplier").innerHTML= "Multiplier x "+x
-       document.getElementById("nextMulti").innerHTML= "Buy: " + prix + " cookies";
-       document.getElementById('affichage').innerHTML = "Score:" + score;
-        }
+            var end = document.getElementById("multiplier");
+            end.disabled = false;
+          }
+          else {
+            multiplicateur++;
+           score = score -prix;
+           prix = prix*2;
+           }
+          var x = multiplicateur+1;
+          document.getElementById("multiplier").innerHTML= "Multiplier x "+x;
+           document.getElementById("nextMulti").innerHTML= "Buy: " + prix + " cookies";
+          document.getElementById('affichage').innerHTML = "Score:" + score;
 
-    else {
-        end.disabled = false;
-    }
    });
 
 //autoclick
@@ -61,10 +55,10 @@ function buyAutoclick() {
         console.log("You have to create more cookies first!");
       }
       else {
-        if (alreadyPlayed=== false && score >= 5) {
-            score = score - 5;
+        if (alreadyPlayed=== false && score >= 500) {
+            score = score - 500;
             setInterval(function(){
-                if (score >= 2) {
+                if (score >= 200) {
                     clic();
                 };
                 alreadyPlayed = true;  
