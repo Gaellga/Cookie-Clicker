@@ -1,18 +1,15 @@
 var score = 0;
 var prix = 50;
-var prixAuto = 30;
 var multiplicateur=0;
 var currenttime = new Date();
 var currentsec = currenttime.getSeconds();
+var bonus = 2;
 
 //clic cookie
-
 function clic() {
-
     function agrandi(){
         document.getElementById('clic').className = "blink-image2";
     };
-
     score++;
     score+=multiplicateur;
     document.getElementById('affichage').innerHTML = "Score:" + score;
@@ -20,9 +17,9 @@ function clic() {
     setTimeout(agrandi, 100);
 }
 
-    document.getElementById('clic').addEventListener('click', function (){
-        clic();
-    });
+document.getElementById('clic').addEventListener('click', function (){
+    clic();
+});
 
  //multiplicateur
 document.getElementById("multiplier").addEventListener("click", function augmenterMultiplicateur() {
@@ -32,21 +29,21 @@ document.getElementById("multiplier").addEventListener("click", function augment
             end.disabled = false;
           }
           else {
-            multiplicateur++;
+           multiplicateur++;
            score = score -prix;
            prix = prix*2;
            }
           var x = multiplicateur+1;
           document.getElementById("multiplier").innerHTML= "Multiplier x "+x;
            document.getElementById("nextMulti").innerHTML= "Buy: " + prix + " cookies";
-          document.getElementById('affichage').innerHTML = "Score:" + score;
+          document.getElementById('affichage').innerHTML = "Score:" + score;n
    });
 
 //autoclick
 var alreadyPlayed = false;
 
 function buyAutoclick() {
-    if (alreadyPlayed=== false && score-prixAuto<0){
+ if (alreadyPlayed=== false && score-prixAuto<0){
         console.log("You have to create more cookies first!");
       }
       else {
@@ -63,4 +60,27 @@ function buyAutoclick() {
             document.getElementById('buyAuto').innerHTML = "";
         };
     }
-}
+};
+document.getElementById("bonus").addEventListener("click", function() {
+		if(score > 1){
+			var sec = 10;
+			score--;
+			var interval = setInterval(function() {
+				sec--;			
+				document.getElementById('affichage').innerHTML = "Score:" + score;
+				document.getElementById("bonus").className = "nobonus";
+				document.getElementById("bonus").innerHTML = sec;
+				if(sec === 0) {
+					clearInterval(interval);
+					console.log("ouou");
+					document.getElementById("bonus").innerHTML = "Get Bonus!";
+      				document.getElementById("bonus").className = "bonus";
+				}
+			}, 1000);
+		}		
+		else {
+     	alert("Your score isn't high enough!");
+    	} 	   
+});
+   
+
