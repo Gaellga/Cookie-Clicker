@@ -20,13 +20,9 @@ function clic() {
     setTimeout(agrandi, 100);
 }
 
-
     document.getElementById('clic').addEventListener('click', function (){
         clic();
-
-
     });
-
 
  //multiplicateur
 document.getElementById("multiplier").addEventListener("click", function augmenterMultiplicateur() {
@@ -44,7 +40,6 @@ document.getElementById("multiplier").addEventListener("click", function augment
           document.getElementById("multiplier").innerHTML= "Multiplier x "+x;
            document.getElementById("nextMulti").innerHTML= "Buy: " + prix + " cookies";
           document.getElementById('affichage').innerHTML = "Score:" + score;
-
    });
 
 //autoclick
