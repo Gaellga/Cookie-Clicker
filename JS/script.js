@@ -5,7 +5,7 @@ var currenttime = new Date();
 var currentsec = currenttime.getSeconds();
 
 //clic cookie
-document.getElementById('clic').addEventListener('click', function (){
+document.getElementById('clic').addEventListener('click', function  click(){
     score++;
     score+=multiplicateur;
     document.getElementById('affichage').innerHTML = "Score:" + score;
@@ -46,26 +46,8 @@ document.getElementById("bonus").addEventListener("click", function() {
 			score--;
 			var interval = setInterval(function() {
 			sec--;
-			document.getElementById("bonus").className = "nobonus";
-			document.getElementById("bonus").innerHTML = sec;
-			if(sec === 0) {
-			clearInterval(interval);
-			console.log("ouou");
-			document.getElementById("bonus").innerHTML = "Get Bonus!";
-      		document.getElementById("bonus").className = "bonus";
-			}
-		}, 1000);
-	}
-		else {
-     	alert("Your score isn't high enough!");
-    	} 	   
-});
-document.getElementById("bonus").addEventListener("click", function() {
-		if(score > 1){
-			var sec = 10;
-			score--;
-			var interval = setInterval(function() {
-			sec--;
+			score * 2;
+			document.getElementById('affichage').innerHTML = "Score:" + score;
 			document.getElementById("bonus").className = "nobonus";
 			document.getElementById("bonus").innerHTML = sec;
 			if(sec === 0) {
