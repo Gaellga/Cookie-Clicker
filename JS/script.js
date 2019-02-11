@@ -4,20 +4,23 @@ var multiplicateur=0;
 var currenttime = new Date();
 var currentsec = currenttime.getSeconds();
 var bonus = 2;
+
 //clic cookie
 function clic() {
     function agrandi(){
         document.getElementById('clic').className = "blink-image2";
-};
+    };
     score++;
     score+=multiplicateur;
     document.getElementById('affichage').innerHTML = "Score:" + score;
     document.getElementById('clic').className = "blink-image";
     setTimeout(agrandi, 100);
-};
+}
+
 document.getElementById('clic').addEventListener('click', function (){
     clic();
 });
+
  //multiplicateur
 document.getElementById("multiplier").addEventListener("click", function augmenterMultiplicateur() {
 
@@ -33,8 +36,17 @@ document.getElementById("multiplier").addEventListener("click", function augment
           var x = multiplicateur+1;
           document.getElementById("multiplier").innerHTML= "Multiplier x "+x;
            document.getElementById("nextMulti").innerHTML= "Buy: " + prix + " cookies";
+<<<<<<< HEAD
           document.getElementById('affichage').innerHTML = "Score:" + score;
 });
+=======
+          document.getElementById('affichage').innerHTML = "Score:" + score;n
+   });
+
+//autoclick
+var alreadyPlayed = false;
+
+>>>>>>> 4e4bca6c24565b0d5dc462ce9e0f52808c1ffafb
 function buyAutoclick() {
  if (alreadyPlayed=== false && score-prixAuto<0){
         console.log("You have to create more cookies first!");
