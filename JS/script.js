@@ -44,6 +44,7 @@ document.getElementById("multiplier").addEventListener("click", function augment
           document.getElementById("multiplier").innerHTML= "Multiplier x "+x;
            document.getElementById("nextMulti").innerHTML= "Buy: " + prix + " cookies";
           document.getElementById('affichage').innerHTML = "Score:" + score;
+
    });
 
 //autoclick
@@ -54,10 +55,10 @@ function buyAutoclick() {
         console.log("You have to create more cookies first!");
       }
       else {
-        if (alreadyPlayed=== false && score >= 5) {
-            score = score - 5;
+        if (alreadyPlayed=== false && score >= 500) {
+            score = score - 500;
             setInterval(function(){
-                if (score >= 2) {
+                if (score >= 200) {
                     clic();
                 };
                 alreadyPlayed = true;  
