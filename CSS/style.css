@@ -1,6 +1,5 @@
 body {
     font-family: 'Courier New', Courier, monospace;
-    background-color: "red";
 }
 
 h1 {
@@ -12,6 +11,7 @@ h1 {
 
 img {
     width:25%;
+    transform: scale(0.9, 0.9); 
 }
 
 button {
@@ -43,7 +43,7 @@ button {
     color: orange;
 }
 .nobonus {
-	background-color: #ff0000;
+    	background-color: #ff0000;
 }
 
 .bonus {
@@ -62,3 +62,13 @@ button {
     margin-left: +43%;
     margin-top: -0.9%;
 }
+.blink-image {
+    transform: scale(0.87, 0.87); 
+    /*transition: transform 0.5s;*/
+    cursor: pointer;
+  }
+.blink-image2 {
+    transform: scale(0.9, 0.9); 
+    /*transition: transform 0.5s;*/
+    cursor: pointer;
+  }
