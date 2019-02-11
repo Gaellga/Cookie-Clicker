@@ -8,15 +8,24 @@ var currentsec = currenttime.getSeconds();
 //clic cookie
 
 function clic() {
-        score++;
-        score+=multiplicateur;
-        document.getElementById('affichage').innerHTML = "Score:" + score;
-    }
+
+    function agrandi(){
+        document.getElementById('clic').className = "blink-image2";
+    };
+
+    score++;
+    score+=multiplicateur;
+    document.getElementById('affichage').innerHTML = "Score:" + score;
+    document.getElementById('clic').className = "blink-image";
+    setTimeout(agrandi, 100);
+}
+
 
     document.getElementById('clic').addEventListener('click', function (){
         clic();
-    });
 
+
+    });
 
 
  //multiplicateur
@@ -26,7 +35,8 @@ document.getElementById("multiplier").addEventListener("click", function augment
        multiplicateur++;
 
        if (score-prix<0){
-         alert("You have to create more cookies first!");
+         var end= document.getElementById('multiplier');
+         end.disabled = false;
        }
        else {
         score = score -prix;
@@ -39,7 +49,6 @@ document.getElementById("multiplier").addEventListener("click", function augment
         }
 
     else {
-        var end = document.getElementById("multiplier");
         end.disabled = false;
     }
    });
@@ -49,13 +58,13 @@ var alreadyPlayed = false;
 
 function buyAutoclick() {
     if (alreadyPlayed=== false && score-prixAuto<0){
-        alert("You have to create more cookies first!");
+        console.log("You have to create more cookies first!");
       }
       else {
-        if (alreadyPlayed=== false && score >= 500) {
-            score = score - 500;
+        if (alreadyPlayed=== false && score >= 5) {
+            score = score - 5;
             setInterval(function(){
-                if (score >= 200) {
+                if (score >= 2) {
                     clic();
                 };
                 alreadyPlayed = true;  
