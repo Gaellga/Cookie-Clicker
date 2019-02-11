@@ -3,20 +3,20 @@ var prix = 50;
 var multiplicateur=0;
 var currenttime = new Date();
 var currentsec = currenttime.getSeconds();
-var bonus = 2;
-
+var prixAuto = 500;
+var click = 1;
+var prixBonus = 20;
+var scorebonus = click*2;
 //clic cookie
 function clic() {
     function agrandi(){
         document.getElementById('clic').className = "blink-image2";
     };
-    score++;
-    score+=multiplicateur;
+    score = score + click;
     document.getElementById('affichage').innerHTML = "Score:" + score;
     document.getElementById('clic').className = "blink-image";
     setTimeout(agrandi, 100);
 }
-
 document.getElementById('clic').addEventListener('click', function (){
     clic();
 });
@@ -29,21 +29,18 @@ document.getElementById("multiplier").addEventListener("click", function augment
             end.disabled = false;
           }
           else {
-           multiplicateur++;
            score = score -prix;
            prix = prix*2;
+           click++;
+           clic();
            }
-          var x = multiplicateur+1;
-          document.getElementById("multiplier").innerHTML= "Multiplier x "+x;
+          document.getElementById("multiplier").innerHTML= "Multiplier x "+ click;
            document.getElementById("nextMulti").innerHTML= "Buy: " + prix + " cookies";
-          document.getElementById('affichage').innerHTML = "Score:" + score;n
-   });
-
+});
 //autoclick
 var alreadyPlayed = false;
-
 function buyAutoclick() {
- if (alreadyPlayed=== false && score-prixAuto<0){
+ if (alreadyPlayed === false && score-prixAuto<0){
         console.log("You have to create more cookies first!");
       }
       else {
@@ -58,28 +55,45 @@ function buyAutoclick() {
             }, 1000);
             document.getElementById('autoclic').innerHTML = "Autoclick On";
             document.getElementById('buyAuto').innerHTML = "";
-        };
+        }
     }
 };
+//bonus
 document.getElementById("bonus").addEventListener("click", function() {
-		if(score > 1){
-			var sec = 10;
-			score--;
-			var interval = setInterval(function() {
-				sec--;			
-				document.getElementById('affichage').innerHTML = "Score:" + score;
-				document.getElementById("bonus").className = "nobonus";
-				document.getElementById("bonus").innerHTML = sec;
-				if(sec === 0) {
-					clearInterval(interval);
-					document.getElementById("bonus").innerHTML = "Get Bonus!";
-      				document.getElementById("bonus").className = "bonus";
-				}
-			}, 1000);
-		}		
-		else {
-     	console.log("Your score isn't high enough!");
-    	} 	   
+
+    var interval = setInterval(function() {
+
+        function iGotBonus(){
+            clic();
+            score = score + scorebonus;
+        }
+        if (score-prixBonus<0){
+            var end = document.getElementById("bonus");
+            end.disabled = false;
+        }
+        else if(score > 20){
+            score = score - 10;
+            var sec = 11;
+            while (sec > 0){
+                iGotBonus();
+                sec --
+                document.getElementById("bonus").className = "nobonus";
+                document.getElementById("bonus").innerHTML = sec;
+            }
+            document.getElementById('clic').removeEventListener('click', function iGotBonus() {});
+        }
+
+    if(sec === 0) {
+        clearInterval(interval);
+        document.getElementById("bonus").innerHTML = "Get Bonus!";
+        document.getElementById("bonus").className = "bonus";
+    }
+}, 1000);		
+document.getElementById('clic').removeEventListener('click', function() { click();
+    console.log (sec);
+
 });
-   
+});
+        
+
 
