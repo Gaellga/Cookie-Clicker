@@ -3,16 +3,14 @@ var prix = 50;
 var multiplicateur=0;
 var currenttime = new Date();
 var currentsec = currenttime.getSeconds();
-var bonus = 200%;
+var bonus = 2;
 //clic cookie
 function clic() {
-
     function agrandi(){
         document.getElementById('clic').className = "blink-image2";
 };
     score++;
     score+=multiplicateur;
-    score+=bonus;
     document.getElementById('affichage').innerHTML = "Score:" + score;
     document.getElementById('clic').className = "blink-image";
     setTimeout(agrandi, 100);
@@ -37,7 +35,7 @@ document.getElementById("multiplier").addEventListener("click", function augment
            document.getElementById("nextMulti").innerHTML= "Buy: " + prix + " cookies";
           document.getElementById('affichage').innerHTML = "Score:" + score;
 
-   });
+});
 function buyAutoclick() {
  if (alreadyPlayed=== false && score-prixAuto<0){
         console.log("You have to create more cookies first!");
@@ -57,27 +55,23 @@ function buyAutoclick() {
         };
     }
 };
-function click2(){
-	var click = 
-};
 document.getElementById("bonus").addEventListener("click", function() {
 		if(score > 1){
 			var sec = 10;
 			score--;
 			var interval = setInterval(function() {
-			sec--;
-			
-			document.getElementById('affichage').innerHTML = "Score:" + score;
-			document.getElementById("bonus").className = "nobonus";
-			document.getElementById("bonus").innerHTML = sec;
-			if(sec === 0) {
-			clearInterval(interval);
-			console.log("ouou");
-			document.getElementById("bonus").innerHTML = "Get Bonus!";
-      		document.getElementById("bonus").className = "bonus";
-			}
-		}, 1000);
-	}
+				sec--;			
+				document.getElementById('affichage').innerHTML = "Score:" + score;
+				document.getElementById("bonus").className = "nobonus";
+				document.getElementById("bonus").innerHTML = sec;
+				if(sec === 0) {
+					clearInterval(interval);
+					console.log("ouou");
+					document.getElementById("bonus").innerHTML = "Get Bonus!";
+      				document.getElementById("bonus").className = "bonus";
+				}
+			}, 1000);
+		}		
 		else {
      	alert("Your score isn't high enough!");
     	} 	   
