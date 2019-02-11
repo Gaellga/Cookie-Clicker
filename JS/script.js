@@ -3,24 +3,23 @@ var prix = 50;
 var multiplicateur=0;
 var currenttime = new Date();
 var currentsec = currenttime.getSeconds();
-var bonus = 2;
-
+var prixAuto = 500;
+var click = 1;
 //clic cookie
 function clic() {
     function agrandi(){
         document.getElementById('clic').className = "blink-image2";
     };
-    score++;
-    score+=multiplicateur;
+    score = score + click;
     document.getElementById('affichage').innerHTML = "Score:" + score;
     document.getElementById('clic').className = "blink-image";
     setTimeout(agrandi, 100);
 }
-
-document.getElementById('clic').addEventListener('click', function (){
+document.getElementById('clic').addEventListener('click', function depclick(){
     clic();
 });
-
+document.getElementById('clic').removeEventListener('click', function depclick(){
+});
  //multiplicateur
 document.getElementById("multiplier").addEventListener("click", function augmenterMultiplicateur() {
 
@@ -29,26 +28,18 @@ document.getElementById("multiplier").addEventListener("click", function augment
             end.disabled = false;
           }
           else {
-           multiplicateur++;
            score = score -prix;
            prix = prix*2;
+           click++;
+           clic();
            }
-          var x = multiplicateur+1;
-          document.getElementById("multiplier").innerHTML= "Multiplier x "+x;
+          document.getElementById("multiplier").innerHTML= "Multiplier x "+ click;
            document.getElementById("nextMulti").innerHTML= "Buy: " + prix + " cookies";
-<<<<<<< HEAD
-          document.getElementById('affichage').innerHTML = "Score:" + score;
 });
-=======
-          document.getElementById('affichage').innerHTML = "Score:" + score;n
-   });
-
 //autoclick
 var alreadyPlayed = false;
-
->>>>>>> 4e4bca6c24565b0d5dc462ce9e0f52808c1ffafb
 function buyAutoclick() {
- if (alreadyPlayed=== false && score-prixAuto<0){
+ if (alreadyPlayed === false && score-prixAuto<0){
         console.log("You have to create more cookies first!");
       }
       else {
@@ -63,29 +54,34 @@ function buyAutoclick() {
             }, 1000);
             document.getElementById('autoclic').innerHTML = "Autoclick On";
             document.getElementById('buyAuto').innerHTML = "";
-        };
+        }
     }
 };
 document.getElementById("bonus").addEventListener("click", function() {
 		if(score > 1){
 			var sec = 10;
-			score--;
+			score = score - 1;
+			console.log(click +"dep");
+			document.getElementById('clic').addEventListener('click', function click(){
+			clic();	
+			});
 			var interval = setInterval(function() {
-				sec--;			
-				document.getElementById('affichage').innerHTML = "Score:" + score;
+				sec--;
 				document.getElementById("bonus").className = "nobonus";
 				document.getElementById("bonus").innerHTML = sec;
+				console.log(click +"bcl");
 				if(sec === 0) {
 					clearInterval(interval);
-					console.log("ouou");
 					document.getElementById("bonus").innerHTML = "Get Bonus!";
       				document.getElementById("bonus").className = "bonus";
+      				console.log(click +"bclif");
 				}
+				console.log(click +" fin");
 			}, 1000);
 		}		
 		else {
      	alert("Your score isn't high enough!");
-    	} 	   
+    	}
+    	document.getElementById('clic').removeEventListener('click', function click(){
+			});   
 });
-   
-
