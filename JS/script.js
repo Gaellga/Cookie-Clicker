@@ -34,7 +34,6 @@ document.getElementById("multiplier").addEventListener("click", function augment
           document.getElementById("multiplier").innerHTML= "Multiplier x "+x;
            document.getElementById("nextMulti").innerHTML= "Buy: " + prix + " cookies";
           document.getElementById('affichage').innerHTML = "Score:" + score;
-
 });
 function buyAutoclick() {
  if (alreadyPlayed=== false && score-prixAuto<0){
