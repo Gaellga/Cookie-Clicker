@@ -28,50 +28,67 @@ for(var i = 0 ; i < 200 ; i++ ){
 //CANVAS
 var c = document.getElementById("mon_canvas");
 var ctx = c.getContext("2d");
-var grd = ctx.createRadialGradient(250, 250, 250, 250, 200, 0);
-grd.addColorStop(0, "sienna");
-grd.addColorStop(1, "peru");
-//halo
+var x=90;
+//ailes
 ctx.beginPath();
-    ctx.shadowBlur = 40;
-    ctx.shadowColor = "orange";
-    ctx.fillStyle="orange";
-    ctx.arc(200, 200, 170, 0, 2 * Math.PI);
+    ctx.fillStyle = "darkslategrey";
+    ctx.bezierCurveTo(250, 480, 380, 430, 400, 300);
+    ctx.bezierCurveTo(400, 300, 380, 160, 250, 120);
     ctx.fill();
 ctx.closePath();
-//ombre
+//flamme
 ctx.beginPath();
-    ctx.shadowBlur = 10;
-    ctx.shadowColor = "#333333";
-    ctx.arc(200, 200, 170, 0, 2 * Math.PI);
+    ctx.fillStyle = "orange";
+    ctx.bezierCurveTo(250, 300, 150, 430, 70, 300);
+    ctx.bezierCurveTo(70, 300, 150, 160, 250, 300);
     ctx.fill();
 ctx.closePath();
-//cookie base
+//corps
 ctx.beginPath();
-    ctx.shadowBlur = 0;
-    ctx.lineWidth = 4;
-    ctx.fillStyle= grd; 
-    ctx.strokeStyle="peru";
-    ctx.arc(200, 200, 170, 0, 2 * Math.PI);
+    ctx.fillStyle = "lightgrey";
+    ctx.bezierCurveTo(150+x, 350, 380+x, 430, 500+x, 300);
+    ctx.lineTo(500+x, 300);
+    ctx.bezierCurveTo(500+x, 300, 380+x, 160, 150+x, 250);
+    ctx.lineTo(150+x, 350);
+    ctx.fill();
+ctx.closePath();
+//bout
+ctx.beginPath();
+    ctx.fillStyle = "indianred";
+    ctx.bezierCurveTo(450+x, 340, 485+x, 320, 500+x, 300);
+    ctx.lineTo(500+x, 300);
+    ctx.bezierCurveTo(500+x, 300, 485+x, 280, 450+x, 260);
+    ctx.lineTo(450+x, 340);
+    ctx.fill();
+ctx.closePath();
+//reacteur
+ctx.beginPath();
+    ctx.moveTo(240, 350);
+    ctx.lineTo(240, 250);
+    ctx.bezierCurveTo(240, 255, 250, 240, 190, 230);
+    ctx.lineTo(190,365);
+    ctx.bezierCurveTo(190, 365, 250, 360, 240, 345);
+    ctx.fill();
+ctx.closePath();
+//aile de face
+ctx.beginPath();
+    ctx.strokeStyle = "darkslategrey";
+    ctx.lineWidth = 15;
+    ctx.lineCap = "round";
+    ctx.moveTo(250, 300);
+    ctx.lineTo(370, 300);
+    ctx.fill();
     ctx.stroke();
-    ctx.fill();
 ctx.closePath();
-//pepites
+//hublot
 ctx.beginPath();
-    ctx.fillStyle= "#582900";
-    ctx.arc(130, 100, 30, 0, 2 * Math.PI);
-    ctx.moveTo(290,130);
-    ctx.arc(290, 130, 38, 0, 2 * Math.PI);
-    ctx.moveTo(170,170);
-    ctx.arc(170, 170, 45, 0, 2 * Math.PI);
-    ctx.moveTo(100,230);
-    ctx.arc(100, 230, 30, 0, 2 * Math.PI);
-    ctx.moveTo(280,250);
-    ctx.arc(280, 250, 50, 0, 2 * Math.PI);
-    ctx.moveTo(200,300);
-    ctx.arc(200, 300, 30, 0, 2 * Math.PI);
+    ctx.fillStyle = "cornsilk";
+    ctx.lineWidth = 12;
+    ctx.arc(450, 300, 35, 0, 2 * Math.PI);
     ctx.fill();
+    ctx.stroke();
 ctx.closePath();
+
 
 //CODE
 //clic cookie

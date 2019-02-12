@@ -1,11 +1,17 @@
 body {
     font-family: 'Courier New', Courier, monospace;
     margin-top: 3%;
-    padding-bottom: 1.4%;
+    margin-bottom: 3%;
     background-image: linear-gradient(to bottom, #413f59, #39374e, #312f43, #292738, #21202e);
     color: white;
     position: relative;
+    width: 100%;
 }
+
+@font-face {
+    font-family: 'BackToFuture';
+    src: url('/font/BTTF.ttf') format('truetype');
+  }
 
 .box {
   background-color: rgb(248, 229, 142);
@@ -15,9 +21,11 @@ body {
 
 h1 {
     text-align: center;
-    font-size: 3em;
+    font-size: 5em;
     margin-top: 2.5%;
     margin-bottom: 5%;
+    font-family: "BackToFuture";
+    color: orange;
 }
 button {
     padding: 2%;
@@ -43,7 +51,7 @@ button {
     flex-direction: column;
     position:absolute;
     margin-left: -50%;
-    margin-top: -37%;
+    margin-top: -40%;
 }
 .buy {
     margin-top: 5%;
