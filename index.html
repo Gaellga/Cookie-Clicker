@@ -13,7 +13,7 @@
         <link href="CSS/reset.css" rel="stylesheet" media="all" type="text/css">
         <link href="CSS/style.css" rel="stylesheet" media="all" type="text/css">
 
-        <!-- <link rel="icon" type="image/png" href="manfav.png"/>-->
+        <link rel="icon" type="image/png" href="img/cookiefav.png"/>
     </head>
 
     <body>
@@ -30,11 +30,19 @@
             </div>
 
             <div id="containerButtons">
-                <button id="multiplier">Multiplier </button>
-                <button id="bonus">Get Bonus!</button>
-                <button id="autoclic" onclick="buyAutoclick()">Buy AutoClick</button>
+                <div>
+                    <button id="multiplier">Multiplier x 1</button>
+                    <p id="nextMulti" class="buy">Buy: 50 cookies</p>
+                </div>
+                <div id="b2">
+                    <button id="bonus">Get Bonus!</button>
+                    <p id="buyBonus" class="buy">Buy: 5000 cookies</p>
+                </div>
+                <div>
+                    <button id="autoclic" onclick="buyAutoclick()">AutoClick Off</button>
+                    <p id="buyAuto" class="buy">Buy: 500 cookies</p>
+                </div>
             </div>
-
         </div>
         </section>
 
