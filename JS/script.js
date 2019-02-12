@@ -73,7 +73,7 @@ document.getElementById("bonus").addEventListener("click", function() {
 				sec--;
 				document.getElementById("bonus").className = "nobonus";
 				document.getElementById("bonus").innerHTML = sec;
-				
+				cli*=2;
 				console.log(click +"bcl");
 				if(sec === 0) {
 					clearInterval(interval);
@@ -81,7 +81,10 @@ document.getElementById("bonus").addEventListener("click", function() {
       				document.getElementById("bonus").className = "bonus";
       				console.log(click +"bcl");
 				}
+				
+
 				console.log(click + " fin");
+				cli/=2;
 			}, 1000);
 		}		
 		else {
@@ -89,6 +92,4 @@ document.getElementById("bonus").addEventListener("click", function() {
     	}
     	document.getElementById('clic').removeEventListener('click', function click(){
 			});   
-});
-document.getElementById("bonus").addEventListener("click", function() {
 });
