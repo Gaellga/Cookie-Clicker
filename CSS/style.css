@@ -1,12 +1,18 @@
 body {
     font-family: 'Courier New', Courier, monospace;
-    margin-left: 10%;
-    margin-right: 10%;
     margin-top: 3%;
-    margin-bottom: 3%;
-    background-color: rgb(59, 58, 80);
+    padding-bottom: 1.4%;
+    background-image: linear-gradient(to bottom, #413f59, #39374e, #312f43, #292738, #21202e);
     color: white;
+    position: relative;
 }
+
+.box {
+  background-color: rgb(248, 229, 142);
+  position: fixed;
+  border-radius: 50%;
+}
+
 h1 {
     text-align: center;
     font-size: 3em;
@@ -17,11 +23,12 @@ button {
     padding: 2%;
     width: 400px;
     font-size: 2.8em;
-    margin-top: 5%;
-    display:inline-block;
+    margin-top: 25%;
+
 }
 #container {
     text-align:center;
+    position: relative;
 }
 #affichage {
     font-size: 2em;
@@ -33,10 +40,10 @@ button {
 #containerButtons {
     display: inline-flex;
     justify-content: center;
-}
-#b2{
-    margin-right: 5%;
-    margin-left: 5%;
+    flex-direction: column;
+    position:absolute;
+    margin-left: -50%;
+    margin-top: -37%;
 }
 .buy {
     margin-top: 5%;
@@ -58,6 +65,6 @@ button {
     transform: scale(1, 1); 
     cursor: pointer;
 }
-#mon_canvas{
-    animation: cookie 3 2;
-}
+/*#mon_canvas{
+ 
+}*/

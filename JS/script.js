@@ -7,6 +7,24 @@ var affichMulti = 1;
 var prixBonus = 5000;
 var prixAuto = 500;
 
+function freshDot(){
+    this.obj = document.createElement("div");
+    this.obj.classList.add("box");
+    this.obj.style.top = (window.innerHeight * Math.random()) + 'px';
+    this.obj.style.left = (window.innerWidth * Math.random()) + 'px';
+    this.size = Math.floor(3 * Math.random()) + 5;
+    this.obj.style.height =  this.size + 'px';
+    this.obj.style.width = this.size + 'px';
+    
+    document.body.appendChild(this.obj);
+}
+var dot = [];
+for(var i = 0 ; i < 200 ; i++ ){
+    dot.push(new freshDot());
+}
+  
+  
+
 //CANVAS
 var c = document.getElementById("mon_canvas");
 var ctx = c.getContext("2d");
