@@ -11,6 +11,52 @@ var m = click;
 
 var prixAuto = 500;
 
+var c = document.getElementById("mon_canvas");
+var ctx = c.getContext("2d");
+var grd = ctx.createRadialGradient(250, 250, 250, 250, 200, 0);
+grd.addColorStop(0, "sienna");
+grd.addColorStop(1, "peru");
+//halo
+ctx.beginPath();
+    ctx.shadowBlur = 40;
+    ctx.shadowColor = "orange";
+    ctx.fillStyle="orange";
+    ctx.arc(200, 200, 170, 0, 2 * Math.PI);
+    ctx.fill();
+ctx.closePath();
+//ombre
+ctx.beginPath();
+    ctx.shadowBlur = 10;
+    ctx.shadowColor = "#333333";
+    ctx.arc(200, 200, 170, 0, 2 * Math.PI);
+    ctx.fill();
+ctx.closePath();
+//cookie base
+ctx.beginPath();
+    ctx.shadowBlur = 0;
+    ctx.lineWidth = 4;
+    ctx.fillStyle= grd; 
+    ctx.strokeStyle="peru";
+    ctx.arc(200, 200, 170, 0, 2 * Math.PI);
+    ctx.stroke();
+    ctx.fill();
+ctx.closePath();
+//pepites
+ctx.beginPath();
+    ctx.fillStyle= "#582900";
+    ctx.arc(130, 100, 30, 0, 2 * Math.PI);
+    ctx.moveTo(290,130);
+    ctx.arc(290, 130, 38, 0, 2 * Math.PI);
+    ctx.moveTo(170,170);
+    ctx.arc(170, 170, 45, 0, 2 * Math.PI);
+    ctx.moveTo(100,230);
+    ctx.arc(100, 230, 30, 0, 2 * Math.PI);
+    ctx.moveTo(280,250);
+    ctx.arc(280, 250, 50, 0, 2 * Math.PI);
+    ctx.moveTo(200,300);
+    ctx.arc(200, 300, 30, 0, 2 * Math.PI);
+    ctx.fill();
+ctx.closePath();
 
 //clic cookie
 function clic() {
