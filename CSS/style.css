@@ -1,38 +1,37 @@
+@font-face {
+  font-family: 'BackToFuture';
+  src: url('/font/BTTF.ttf') format('truetype');
+}
 body {
-    font-family: 'Courier New', Courier, monospace;
+    font-family: "BackToFuture";
     margin-top: 3%;
     margin-bottom: 3%;
-    background-image: linear-gradient(to bottom, #413f59, #39374e, #312f43, #292738, #21202e);
+    background: linear-gradient(to bottom, #413f59, #39374e, #312f43, #292738, #21202e) center center fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
     color: white;
     position: relative;
-    width: 100%;
 }
-
-@font-face {
-    font-family: 'BackToFuture';
-    src: url('/font/BTTF.ttf') format('truetype');
-  }
-
-.box {
+.stars {
   background-color: rgb(248, 229, 142);
   position: fixed;
   border-radius: 50%;
 }
-
 h1 {
     text-align: center;
     font-size: 5em;
     margin-top: 2.5%;
-    margin-bottom: 5%;
-    font-family: "BackToFuture";
+    margin-bottom: 4%;
     color: orange;
 }
-button {
-    padding: 2%;
-    width: 400px;
-    font-size: 2.8em;
-    margin-top: 25%;
-
+button{
+  font-family: "BackToFuture";
+  color: rgb(255, 248, 210);
+  border-color: orange;
+  text-shadow: 2px 0 0 orange, -2px 0 0 #fff, 0 2px 0 orange, 0 -2px 0 #fff, 1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;
+  background-image: linear-gradient(90deg, #00C0FF 0%, #FFCF00 49%, #FC4F4F 80%, #00C0FF 100%);
+  border-radius:10px;
+  width: 300px;
 }
 #container {
     text-align:center;
@@ -40,39 +39,67 @@ button {
 }
 #affichage {
     font-size: 2em;
-    margin-bottom: 2%;
 }
 #clic {
-    margin-bottom: 3%;
+    margin: auto;
+    width: 600px;
+    height: 450px;
+}
+.blink-image {
+  transform: scale(0.97, 0.97); 
+  cursor: pointer;
+}
+.blink-image2 {
+  transform: scale(1, 1); 
+  cursor: pointer;
 }
 #containerButtons {
     display: inline-flex;
     justify-content: center;
     flex-direction: column;
     position:absolute;
-    margin-left: -50%;
-    margin-top: -40%;
+    margin-left: -45%;
+    margin-top: -27%;
 }
 .buy {
     margin-top: 5%;
-}
-#autoclic {
-    color: orange;
+    font-family: 'Courier New', Courier, monospace;
 }
 .nobonus {
     color: #eb3737;
+    font-size:2em;
+    padding:4%;
+    margin-top: 20%;
+    height: 200%;
+    line-height: 1.5em;
 }
-.bonus{
-    color:#1da847;
+.rainbow-button {
+  font-size: 2em;
+  line-height: 1.5em;
+  margin-top: 20%;
+  padding: 4%;
 }
-.blink-image {
-    transform: scale(0.97, 0.97); 
-    cursor: pointer;
+.rainbow-button:after {
+  content:attr(alt);
 }
-.blink-image2 {
-    transform: scale(1, 1); 
-    cursor: pointer;
+.rainbow-button:hover {
+  animation:slidebg 2s linear infinite;
 }
-/*#mon_canvas{
- 
-}*/
+@keyframes slidebg {
+  to {
+    background-position:20vw;
+  }
+}
+#reparation {
+  font-size: 1.7em;
+  line-height: 2em;
+  margin-right: -70%;
+  margin-top: 3%;
+  padding: 0.5%;
+}
+#reparation:after {
+  content:attr(alt);
+}
+#reparation:hover {
+  animation:slidebg 2s linear infinite;
+}

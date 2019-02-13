@@ -3,22 +3,21 @@
 <html lang="en">
 
     <head>
-        <title>Cookier-Cliker</title>
+        <title>Rocket-Cliker</title>
 
         <meta charset="utf-8">
-        <meta name="description" content="Cooker Clicker Game">
-        <meta name="keywords" content="cookie, cliker, click, game">
+        <meta name="description" content="Rocket Clicker Game">
+        <meta name="keywords" content="cookie, cliker, rocket, click, game">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link href="CSS/reset.css" rel="stylesheet" media="all" type="text/css">
         <link href="CSS/style.css" rel="stylesheet" media="all" type="text/css">
 
-        <link rel="icon" type="image/png" href="img/cookiefav.png"/>
+        <link rel="icon" type="image/png" href="img/rocket.png"/>
     </head>
 
     <body>
-
-        <header><h1>Fly> & moon !</h1></header>
+        <header><h1>> Bring rocket&moon !</h1></header>
 
         <section>
         <div id="container">
@@ -32,18 +31,16 @@
             </div>
 
             <div id="containerButtons">
-                <div>
-                    <button id="multiplier">Multiplier x 1</button>
-                    <p id="nextMulti" class="buy">Buy: 50 cookies</p>
-                </div>
-                <div id="b2">
-                    <button id="bonus">Get Bonus!</button>
-                    <p id="buyBonus" class="buy">Buy: 5000 cookies</p>
-                </div>
-                <div>
-                    <button id="autoclic" onclick="buyAutoclick()">AutoClick Off</button>
-                    <p id="buyAuto" class="buy">Buy: 500 cookies</p>
-                </div>
+                <button id="multiplier" onclick="augmenterMultiplicateur()" class="rainbow-button">Multiplier x 1</button>
+                <p id="nextMulti" class="buy">Buy: 50 points</p>
+                <button id="bonus" onclick="iGotBonus()"  class="rainbow-button">Click to get bonus!</button>
+                <p id="buyBonus" class="buy">Buy: 5000 points</p>
+                <button id="autoclic" onclick="buyAutoclick()" class="rainbow-button">AutoClick> Off</button>
+                <p id="buyAuto" class="buy">Buy: 500 points</p>
+            </div>
+            
+            <div>
+                <button id="reparation">Repair for 1000 points</button>
             </div>
         </div>
         </section>
