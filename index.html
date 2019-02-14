@@ -1,35 +1,27 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
     <head>
         <title>Rocket-Cliker</title>
-
         <meta charset="utf-8">
         <meta name="description" content="Rocket Clicker Game">
         <meta name="keywords" content="cookie, cliker, rocket, click, game">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
         <link href="CSS/reset.css" rel="stylesheet" media="all" type="text/css">
         <link href="CSS/style.css" rel="stylesheet" media="all" type="text/css">
-
         <link rel="icon" type="image/png" href="img/rocket.png"/>
     </head>
-
-    <body>
-        <header><h1>> Bring rocket&moon !</h1></header>
-
+    <body id="etoile">
+        <header>
+            <h1>Bring rocket&moon !</h1>
+        </header>
         <section>
         <div id="container">
-
             <div id="affichage">Score:0</div>
-
             <div id="clic">
                 <canvas id="mon_canvas" width="600" height="600">
                     Your browser does not support the canvas element :(
                 </canvas>
             </div>
-
             <div id="containerButtons">
                 <button id="multiplier" onclick="augmenterMultiplicateur()" class="rainbow-button">Multiplier x 1</button>
                 <p id="nextMulti" class="buy">Buy: 50 points</p>
@@ -38,17 +30,20 @@
                 <button id="autoclic" onclick="buyAutoclick()" class="rainbow-button">AutoClick> Off</button>
                 <p id="buyAuto" class="buy">Buy: 500 points</p>
             </div>
-            
             <div>
                 <button id="reparation">Repair for 1000 points</button>
             </div>
         </div>
         </section>
-        
-        <footer></footer>
-
+        <div id="spotify">
+                <iframe src="https://open.spotify.com/embed/user/topsifybelgium/playlist/0NLO8miUwWjAGks8i0B4am" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media">
+                </iframe>
+        </div>
+        <footer>
+            <p>
+            Codé par Ilaria, Gaelle, Othman et Dorian. Pour le projet cookie clicker en fevrier 2019 à Becode.
+            </p>
+        </footer>
         <script src="JS/script.js"></script>
-
     </body>
-
-    </html>
+</html>

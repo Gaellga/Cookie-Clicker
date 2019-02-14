@@ -6,16 +6,18 @@ body {
     font-family: "BackToFuture";
     margin-top: 3%;
     margin-bottom: 3%;
-    background: linear-gradient(to bottom, #413f59, #39374e, #312f43, #292738, #21202e) center center fixed;
+    background: linear-gradient(210deg, #030045 30%, #250B65 55%, #845EC2 75%, #3596B5 85%, #008E9B 90%, #008F7A 100%) center center fixed;
     background-size: cover;
     background-repeat: no-repeat;
     color: white;
     position: relative;
+    z-index: 0;
 }
 .stars {
   background-color: rgb(248, 229, 142);
   position: fixed;
   border-radius: 50%;
+  z-index: 5;
 }
 h1 {
     text-align: center;
@@ -27,15 +29,16 @@ h1 {
 button{
   font-family: "BackToFuture";
   color: rgb(255, 248, 210);
-  border-color: orange;
-  text-shadow: 2px 0 0 orange, -2px 0 0 #fff, 0 2px 0 orange, 0 -2px 0 #fff, 1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;
-  background-image: linear-gradient(90deg, #00C0FF 0%, #FFCF00 49%, #FC4F4F 80%, #00C0FF 100%);
+  border-color: #FFFFFF;
+  background-image: linear-gradient(120deg, #845EC2 0%, #2C73D2 100%);
   border-radius:10px;
   width: 300px;
+  z-index: 10;
 }
 #container {
     text-align:center;
     position: relative;
+    z-index: 20;
 }
 #affichage {
     font-size: 2em;
@@ -102,4 +105,29 @@ button{
 }
 #reparation:hover {
   animation:slidebg 2s linear infinite;
+}
+#mon_canvas {
+  transform: rotate(-90deg);
+}
+footer {
+  height: 50px;
+  width: 100%;
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  text-align: center;
+  background-color: #333333;
+  z-index: 30;
+}
+p {
+  z-index: 30;
+}
+#spotify {
+  position: absolute;
+  top: 175px;
+  right: 30px;
+  z-index: 40;
+}
+header{
+  z-index: 50;
 }

@@ -106,7 +106,7 @@ document.getElementById("bonus").addEventListener("click", iGotBonus);
 
 //ETOILES GENEREES ALEATOIREMENT
 function freshDot(){
-  this.obj = document.createElement("div");
+  this.obj = document.createElement("etoile");
   this.obj.classList.add("stars");
   this.obj.style.top = (window.innerHeight * Math.random()) + 'px';
   this.obj.style.left = (window.innerWidth * Math.random()) + 'px';
