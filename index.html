@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Rocket-Cliker</title>
+        <meta charset="utf-8">
+        <meta name="description" content="Rocket Clicker Game">
+        <meta name="keywords" content="cookie, cliker, rocket, click, game">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="CSS/reset.css" rel="stylesheet" media="all" type="text/css">
+        <link href="CSS/style.css" rel="stylesheet" media="all" type="text/css">
+        <link rel="icon" type="image/png" href="img/rocket.png"/>
+        <link href="https://fonts.googleapis.com/css?family=Black+Ops+One" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Aldrich" rel="stylesheet"> 
+    </head>
+    <body>
+        <header>
+            <h1>Bring rocket to the moon !</h1>
+        </header>
+        <section>
+        <div id="container">
+            <div id="affichage">Score:0</div>
+            <div id="clic">
+                <canvas id="mon_canvas" width="600" height="600">
+                    Your browser does not support the canvas element :(
+                </canvas>
+            </div>
+            <div id="healthbar">
+                <p>Health:</p>
+                <progress id="health" value="100" max="100"></progress>
+            </div>
+            <div id="containerButtons">
+                <button id="multiplier" onclick="augmenterMultiplicateur()" class="rainbow-button">Multiplier x 1</button>
+                <p id="nextMulti" class="buy">Buy: 50 points</p>
+                <button id="bonus" onclick="iGotBonus()"  class="rainbow-button">Get bonus!</button>
+                <p id="buyBonus" class="buy">Buy: 5000 points</p>
+                <button id="autoclic" onclick="buyAutoclick()" class="rainbow-button">AutoClick > Off</button>
+                <p id="buyAuto" class="buy">Buy: 500 points</p>
+            </div>
+            <div>
+                <button id="reparation">Repair for 1000 points</button>
+            </div>
+        </div>
+        </section>
+        <div id="music">
+            <audio src="/sound/bgmusic.mp3" controls loop autoplay>
+                <p>If you are reading this, it is because your browser does not support the audio element.</p>
+            </audio>
+        </div>
+        <footer>
+            <p>
+            Codé par Ilaria, Gaelle, Othman et Dorian. Pour le projet cookie clicker, février 2019, à Becode.
+            </p>
+        </footer>
+        <script src="JS/script.js"></script>
+    </body>
+</html>
