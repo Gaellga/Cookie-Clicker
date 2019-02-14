@@ -1,17 +1,15 @@
-@font-face {
-  font-family: 'BackToFuture';
-  src: url('/font/BTTF.ttf') format('truetype');
-}
+
 body {
-    font-family: "BackToFuture";
-    margin-top: 3%;
-    margin-bottom: 3%;
-    background: linear-gradient(210deg, #030045 30%, #250B65 55%, #845EC2 75%, #3596B5 85%, #008E9B 90%, #008F7A 100%) center center fixed;
+    font-family: 'Black Ops One', cursive;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    background: linear-gradient(210deg, #161527 30%, rgb(55, 39, 97) 55%, rgb(68, 64, 116) 75%, rgb(81, 118, 131) 85%, #008E9B 90%, rgb(56, 117, 108) 100%) center center fixed;
     background-size: cover;
     background-repeat: no-repeat;
     color: white;
     position: relative;
     z-index: 0;
+    cursor: url('/img/cursor.png'), default;
 }
 .stars {
   background-color: rgb(248, 229, 142);
@@ -23,17 +21,19 @@ h1 {
     text-align: center;
     font-size: 5em;
     margin-top: 2.5%;
-    margin-bottom: 4%;
-    color: orange;
+    margin-bottom: 3%;
+    color: rgb(195, 189, 228);
 }
 button{
-  font-family: "BackToFuture";
-  color: rgb(255, 248, 210);
-  border-color: #FFFFFF;
-  background-image: linear-gradient(120deg, #845EC2 0%, #2C73D2 100%);
+  font-family: 'Aldrich', sans-serif;
+  color: rgb(226, 233, 235);
+  border-color: lightseagreen;
+  text-shadow: 2px 0 0 lightseagreen, -2px 0 0 rgb(175, 217, 255), 0 2px 0 lightseagreen, 0 -2px 0 #fff, 1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;
+  background-image: linear-gradient(90deg, rgb(236, 100, 180) 0%, rgb(0, 47, 255) 49%, rgb(43, 178, 231) 80%, rgb(236, 100, 180) 100%);
   border-radius:10px;
   width: 300px;
   z-index: 10;
+  cursor: url('/img/cursor2.png'), default;
 }
 #container {
     text-align:center;
@@ -41,7 +41,7 @@ button{
     z-index: 20;
 }
 #affichage {
-    font-size: 2em;
+    font-size: 2.3em;
 }
 #clic {
     margin: auto;
@@ -50,11 +50,11 @@ button{
 }
 .blink-image {
   transform: scale(0.97, 0.97); 
-  cursor: pointer;
+  cursor: url('/img/cursor2.png'), default;
 }
 .blink-image2 {
   transform: scale(1, 1); 
-  cursor: pointer;
+  cursor: url('/img/cursor2.png'), default;
 }
 #containerButtons {
     display: inline-flex;
@@ -62,7 +62,7 @@ button{
     flex-direction: column;
     position:absolute;
     margin-left: -45%;
-    margin-top: -27%;
+    margin-top: -28%;
 }
 .buy {
     margin-top: 5%;
@@ -77,10 +77,10 @@ button{
     line-height: 1.5em;
 }
 .rainbow-button {
-  font-size: 2em;
+  font-size: 2.5em;
   line-height: 1.5em;
-  margin-top: 20%;
-  padding: 4%;
+  margin-top: 15%;
+  height: 130px;
 }
 .rainbow-button:after {
   content:attr(alt);
@@ -97,7 +97,7 @@ button{
   font-size: 1.7em;
   line-height: 2em;
   margin-right: -70%;
-  margin-top: 3%;
+  margin-top: 2%;
   padding: 0.5%;
 }
 #reparation:after {
@@ -110,24 +110,36 @@ button{
   transform: rotate(-25deg);
 }
 footer {
-  height: 40px;
+  height: 50px;
   width: 100%;
   position: fixed;
   bottom: 0px;
   left: 0px;
   text-align: center;
-  background-color: #333333;
+  background-color: rgb(58, 58, 58, 0.5);
   z-index: 30;
+  color: rgb(208, 209, 209)
 }
 p {
   z-index: 30;
 }
-#spotify {
+#music {
   position: absolute;
-  top: 175px;
-  right: 30px;
+  top: -30px;
+  right: 20px;
   z-index: 40;
 }
 header{
   z-index: 50;
+}
+
+#healthbar {
+
+  position: absolute;
+  margin-top:5%;
+  margin-left:35%;
+}
+
+#health{
+  width: 500px;
 }

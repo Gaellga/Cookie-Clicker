@@ -25,6 +25,7 @@ function clic() {
     document.getElementById('affichage').innerHTML = "Score:" + score;
     cli.className = "blink-image";
     setTimeout(agrandi, 100);
+    health.value += 2;
 }
 
 //on fait marcher les boutons
@@ -72,7 +73,7 @@ cli.addEventListener('click', function (){
           getBonus = false;
           click = click / 2;
           clearInterval(interval);
-          bonuss.innerHTML = "Click to get bonus!";
+          bonuss.innerHTML = "Get bonus!";
           bonuss.className = "rainbow-button";
         }
     
@@ -93,7 +94,7 @@ document.getElementById("bonus").addEventListener("click", iGotBonus);
                     alreadyPlayed = true;  
                     document.getElementById('affichage').innerHTML = "Score:" + score;
                 }, 1000);
-                auto.innerHTML = "Autoclick> On";
+                auto.innerHTML = "Autoclick > On";
                 document.getElementById('buyAuto').innerHTML = "";
             }
         
@@ -103,6 +104,14 @@ document.getElementById("bonus").addEventListener("click", iGotBonus);
     });
 
 });
+
+setInterval(function(){
+  let health = document.getElementById("health")
+  health.value -= 20;
+  //function restoreHealth(){
+    //health.value
+  //}
+},10000);
 
 //ETOILES GENEREES ALEATOIREMENT
 function freshDot(){
