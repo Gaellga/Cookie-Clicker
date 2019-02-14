@@ -17,35 +17,40 @@
             <h1>Bring rocket to the moon !</h1>
         </header>
         <section>
-        <div id="container">
-            <div id="affichage">Score:0</div>
-            <div id="clic">
-                <canvas id="mon_canvas" width="600" height="600">
-                    Your browser does not support the canvas element :(
-                </canvas>
+            <div id="gameOver">
+                <p> </p>
+                <img style="display:none" id="explosion" src="https://media.giphy.com/media/l41lHDSvmwnQGDUD6/giphy.gif"/>
+              
             </div>
-            <div id="healthbar">
-                <p>Health:</p>
-                <progress id="health" value="100" max="100"></progress>
+            <div id="container">
+                <div id="affichage">Score:0</div>
+                <div id="clic">
+                    <canvas id="mon_canvas" width="600" height="600">
+                        Your browser does not support the canvas element :(
+                    </canvas>
+                </div>
+                <div id="healthbar">
+                    <p>Health:</p>
+                    <progress id="health" value="100" max="100"></progress>
+                </div>
+                <div id="containerButtons">
+                    <button id="multiplier" class="rainbow-button">Multiplier x 1</button>
+                    <p id="nextMulti" class="buy">Buy: 50 points</p>
+                    <button id="bonus" onclick="iGotBonus()"  class="rainbow-button">Get bonus!</button>
+                    <p id="buyBonus" class="buy">Buy: 5000 points</p>
+                    <button id="autoclic" onclick="buyAutoclick()" class="rainbow-button">AutoClick > Off</button>
+                    <p id="buyAuto" class="buy">Buy: 500 points</p>
+                </div>
+                <div>
+                    <button id="reparation" onclick="restoreLife()">Repair for <br>10 points</button>
+                </div>
             </div>
-            <div id="containerButtons">
-                <button id="multiplier" class="rainbow-button">Multiplier x 1</button>
-                <p id="nextMulti" class="buy">Buy: 50 points</p>
-                <button id="bonus" onclick="iGotBonus()"  class="rainbow-button">Get bonus!</button>
-                <p id="buyBonus" class="buy">Buy: 5000 points</p>
-                <button id="autoclic" onclick="buyAutoclick()" class="rainbow-button">AutoClick > Off</button>
-                <p id="buyAuto" class="buy">Buy: 500 points</p>
+            <div id="music">
+                <audio src="sound/bgmusic.mp3" controls loop autoplay>
+                    <p>If you are reading this, it is because your browser does not support the audio element.</p>
+                </audio>
             </div>
-            <div>
-                <button id="reparation" onclick="restoreLife()">Repair for <br>10 points</button>
-            </div>
-        </div>
         </section>
-        <div id="music">
-            <audio src="sound/bgmusic.mp3" controls loop autoplay>
-                <p>If you are reading this, it is because your browser does not support the audio element.</p>
-            </audio>
-        </div>
         <footer>
             <p id="credits">
             Codé par Ilaria, Gaëlle, Othman et Dorian. Pour le projet cookie clicker, février 2019, à Becode.
