@@ -23,7 +23,6 @@ else {
   var end = document.getElementById("multiplier");
   end.disabled = false;
 }
-//CODE DES BOUTONS ET DU SCORE
 // désactivation multi
 if (score<1){
   var end = document.getElementById("multiplier");
@@ -53,75 +52,66 @@ else {
   nd.disabled = false;
 }
 
-
 //on initialise le clic
 function clic() {
-    function agrandi(){
-        cli.className = "blink-image2";
-    };
-    score = score + click;
-    document.getElementById('affichage').innerHTML = "Score:" + score;
-    cli.className = "blink-image";
-    setTimeout(agrandi, 100);
-    health.value += 2;
-    if (score-prix<0){
-var end = document.getElementById("multiplier");
-end.disabled = true;
-}
-else {
-var end = document.getElementById("multiplier");
-end.disabled = false;
-}
-if (score<5000){
-  var nd = document.getElementById("bonus");
-  nd.disabled = true;
-}
-else {
-  var nd = document.getElementById("bonus");
-  nd.disabled = false;
-}
-
-if (score<500){
-  var d = document.getElementById("autoclic");
-  d.disabled = true;
-}
-else {
-  var d = document.getElementById("autoclic");
-  d.disabled = false;
-}
+  function agrandi(){
+      cli.className = "blink-image2";
+  };
+  score = score + click;
+  document.getElementById('affichage').innerHTML = "Score:" + score;
+  cli.className = "blink-image";
+  setTimeout(agrandi, 100);
+  health.value += 2;
+  if (score-prix<0){
+    var end = document.getElementById("multiplier");
+    end.disabled = true;
+  } else {
+    var end = document.getElementById("multiplier");
+    end.disabled = false;
+  }
+  if (score<5000){
+    var nd = document.getElementById("bonus");
+    nd.disabled = true;
+  } else {
+    var nd = document.getElementById("bonus");
+    nd.disabled = false;
+  }
+  if (score<500){
+    var d = document.getElementById("autoclic");
+    d.disabled = true;
+  } else {
+    var d = document.getElementById("autoclic");
+    d.disabled = false;
+  }
 }
 
 //on fait marcher les boutons
 cli.addEventListener('click', function (){
     clic();
 
-    //fonction multiplicateur
     //multiplicateur
     document.getElementById("multiplier").addEventListener("click", function augmenterMultiplicateur() {
-    if (score-prix<0){
-               var end = document.getElementById("multiplier");
-               end.disabled = true;
-             }else{
-                  if(getBonus === false){
-                  score = score -prix;
-                  prix = prix*2;
-                  multiplicateur++;
-                  click =  multiplicateur;
-                  affichMulti++;
-                  var end = document.getElementById("multiplier");
-                  end.disabled =false;
-                  var nd = document.getElementById("bonus");
-                  nd.disabled =false;
-              } else if(getBonus === true) {
-                  click = click + multiplicateur + multiplicateur;
-
-              }}
-
-              document.getElementById("multiplier").innerHTML= "Multiplier x "+ affichMulti;
-              document.getElementById("nextMulti").innerHTML= "Buy: " + prix + " cookies";
+      if (score-prix<0){
+        var end = document.getElementById("multiplier");
+        end.disabled = true;
+      }else{
+        if(getBonus === false){
+          score = score -prix;
+          prix = prix*2;
+          multiplicateur++;
+          click =  multiplicateur;
+          affichMulti++;
+          var end = document.getElementById("multiplier");
+          end.disabled =false;
+          var nd = document.getElementById("bonus");
+          nd.disabled =false;
+        } else if(getBonus === true) {
+          click = click + multiplicateur + multiplicateur;
+        }
+      }
+      document.getElementById("multiplier").innerHTML= "Multiplier x "+ affichMulti;
+      document.getElementById("nextMulti").innerHTML= "Buy: " + prix + " cookies";
     });
-    //quand on clique sur le bouton multiplicateur
-
 
     //bonus fonctionnement
     function iGotBonus() {
@@ -167,28 +157,27 @@ document.getElementById("bonus").addEventListener("click", iGotBonus);
     var alreadyPlayed = false;
 
     function buyAutoclick() {
-            if (alreadyPlayed=== false && score >= 500) {
-              if (score<500){
-                var d = document.getElementById("autoclic");
-                d.disabled = true;
-              }
-              else {
-                var d = document.getElementById("autoclic");
-                d.disabled = false;
-              }
-                score = score - 500;
-                setInterval(function(){
-                    if (score >= 200) {
-                        clic();
-                    };
-                    alreadyPlayed = true;
-                    document.getElementById('affichage').innerHTML = "Score:" + score;
-                }, 1000);
-                var c = document.getElementById("autoclic");
-                c.disabled = true;
-                auto.innerHTML = "Autoclick> On";
-                document.getElementById('buyAuto').innerHTML = "";
-            }
+      if (alreadyPlayed=== false && score >= 500) {
+        if (score<500){
+          var d = document.getElementById("autoclic");
+          d.disabled = true;
+        } else {
+          var d = document.getElementById("autoclic");
+          d.disabled = false;
+        }
+          score = score - 500;
+          setInterval(function(){
+            if (score >= 200) {
+              clic();
+            };
+            alreadyPlayed = true;
+            document.getElementById('affichage').innerHTML = "Score:" + score;
+          }, 1000);
+          var c = document.getElementById("autoclic");
+          c.disabled = true;
+          auto.innerHTML = "Autoclick> On";
+          document.getElementById('buyAuto').innerHTML = "";
+        }
 
     };
     auto.addEventListener("click", function() {
@@ -197,15 +186,18 @@ document.getElementById("bonus").addEventListener("click", iGotBonus);
 
 });
 
-
 //vie qui diminue
   setInterval(function(){
-    let health = document.getElementById("health");
-    health.value -= 20;
-    if (health.value === 0) {
-      console.log("game Over");
-    }
-  },2000);
+  let health = document.getElementById("health")
+  health.value -= 20;
+  if (health.value === 0) {
+    document.getElementById("gameOver").innerHTML="GAME OVER!!!!!";
+    document.getElementById("explosion").style.display="inline";
+  }
+  if (health.value != 0){
+    document.getElementById("gameOver").style.display="hidden";
+  };
+},1000);
 
   function restoreLife(){
     console.log("clic");
