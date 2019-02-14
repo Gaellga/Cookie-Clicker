@@ -47,7 +47,8 @@ button{
   /* background:  url(https://media.giphy.com/media/l41lHDSvmwnQGDUD6/giphy.gif) no-repeat center center fixed; 
   background-size: cover;*/ 
 }
-#explosion{
+
+#fondnoir{
   position: absolute;
   width: 100%;
   height: 100%;
@@ -153,7 +154,6 @@ header{
   z-index: 50;
 }
 #healthbar {
-
   position: absolute;
   margin-top:5%;
   margin-left:35%;
@@ -211,7 +211,6 @@ progress[value]::-moz-progress-bar {
 #health{
   width: 500px;
 }
-
 #credits {
   margin-top: 1%;
 }

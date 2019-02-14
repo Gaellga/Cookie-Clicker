@@ -3,10 +3,10 @@ var click = 1;
 var getBonus = false;
 var multiplicateur = 1;
 var affichMulti = 1;
-var sec = 5;
+var sec = 30;
 var prix = 50;
-var prixBonus = 50;
-var prixAuto = 20;
+var prixBonus = 5000;
+var prixAuto = 500;
 var prixRepair = 10;
 var cli = document.getElementById("clic");
 var multi = document.getElementById("multiplier");
@@ -140,17 +140,18 @@ cli.addEventListener('click', function (){
         bonuss.innerHTML = sec + " seconds left";
 
         if(sec < 1){
-          bonuss.addEventListener("click", iGotBonus);
+          bon.addEventListener("click", iGotBonus);
           getBonus = false;
           click = click / 2;
           sec =5;
           clearInterval(interval);
-
-          bonuss.innerHTML = "Click to get bonus!";
-          bonuss.className = "rainbow-button";
+          bon.innerHTML = "Get bonus!";
+          bon.className = "rainbow-button";
+          sec =30;
         }
       }, 1000);
-  }}
+    }
+  }
 document.getElementById("bonus").addEventListener("click", iGotBonus);
 
     //autoclick
@@ -188,16 +189,18 @@ document.getElementById("bonus").addEventListener("click", iGotBonus);
 
 //vie qui diminue
   setInterval(function(){
-  let health = document.getElementById("health")
-  health.value -= 20;
-  if (health.value === 0) {
-    document.getElementById("gameOver").innerHTML="GAME OVER!!!!!";
-    document.getElementById("explosion").style.display="inline";
-  }
-  if (health.value != 0){
-    document.getElementById("gameOver").style.display="hidden";
-  };
-},1000);
+    let health = document.getElementById("health")
+    health.value -= 20;
+    if (health.value === 0) {
+      document.getElementById("gameOver").innerHTML="GAME OVER!!!!!";
+      document.getElementById("fondnoir").style.display="inline";
+      document.getElementById("mon_canvas").style.display="inline";
+      //console.log("game Over");
+    }
+    if (health.value != 0){
+      document.getElementById("gameOver").style.display="hidden";
+    };
+  },2000);
 
   function restoreLife(){
     console.log("clic");
