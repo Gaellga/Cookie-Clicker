@@ -62,7 +62,7 @@ button{
     flex-direction: column;
     position:absolute;
     margin-left: -45%;
-    margin-top: -28%;
+    margin-top: -25%;
 }
 .buy {
     margin-top: 5%;
@@ -94,11 +94,12 @@ button{
   }
 }
 #reparation {
-  font-size: 1.7em;
+  font-size: 1.8em;
   line-height: 2em;
   margin-right: -70%;
   margin-top: 2%;
   padding: 0.5%;
+  height: 130px;
 }
 #reparation:after {
   content:attr(alt);
@@ -134,7 +135,6 @@ header{
 }
 
 #healthbar {
-
   position: absolute;
   margin-top:5%;
   margin-left:35%;

@@ -85,10 +85,10 @@ document.getElementById("bonus").addEventListener("click", iGotBonus);
     var alreadyPlayed = false;
     
     function buyAutoclick() {
-            if (alreadyPlayed=== false && score >= 500) {
-                score = score - 500;
+            if (alreadyPlayed=== false && score >= 20) {
+                score = score - 20;
                 setInterval(function(){
-                    if (score >= 200) {
+                    if (score >= 20) {
                         clic();
                     };
                     alreadyPlayed = true;  
@@ -97,7 +97,6 @@ document.getElementById("bonus").addEventListener("click", iGotBonus);
                 auto.innerHTML = "Autoclick > On";
                 document.getElementById('buyAuto').innerHTML = "";
             }
-        
     };
     auto.addEventListener("click", function() {
         buyAutoclick();
@@ -118,6 +117,7 @@ document.getElementById("bonus").addEventListener("click", iGotBonus);
       health.value += 100;
       score = score-prixRepair;
       prixRepair = prixRepair*2;
+      document.getElementById("reparation").innerHTML= "Repair for<br> "+ prixRepair + " points";
     }
   }
 
