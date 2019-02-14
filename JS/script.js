@@ -15,70 +15,80 @@ var bon = document.getElementById("bonus");
 var repair = document.getElementById("reparation");
 
 //CODE DES BOUTONS ET DU SCORE
-
+if (score<1){
+  var end = document.getElementById("multiplier");
+  end.disabled = true;
+}
+else {
+  var end = document.getElementById("multiplier");
+  end.disabled = false;
+}
 //on initialise le clic
 function clic() {
-    function agrandi(){
-        cli.className = "blink-image2";
-    };
-    score = score + click;
-    document.getElementById('affichage').innerHTML = "Score:" + score;
-    cli.className = "blink-image";
-    setTimeout(agrandi, 100);
-    health.value += 2;
+  function agrandi(){
+    cli.className = "blink-image2";
+  };
+  score = score + click;
+  document.getElementById('affichage').innerHTML = "Score:" + score;
+  cli.className = "blink-image";
+  setTimeout(agrandi, 100);
+  health.value += 2;
+  if (score-prix<0){
+    var end = document.getElementById("multiplier");
+    end.disabled = true;
+  } else {
+    var end = document.getElementById("multiplier");
+    end.disabled = false;
+  }
 }
-
 //on fait marcher les boutons
 cli.addEventListener('click', function (){
     clic();
 
-    //fonction multiplicateur
-    function augmenterMultiplicateur() {
-      if (score>prix){
+  //multiplicateur
+    document.getElementById("multiplier").addEventListener("click", function() {
+      if (score-prix<0){
+        var end = document.getElementById("multiplier");
+        end.disabled = false;
+      }else{
         if(getBonus === false){
-          score = score - prix;
+          score = score -prix;
           prix = prix*2;
-          click = click + multiplicateur;
+          multiplicateur++;
+          click =  multiplicateur;
           affichMulti++;
-        }else if(getBonus === true) {
+          var end = document.getElementById("multiplier");
+          end.disabled =true;
+        } else if(getBonus === true) {
           click = click + multiplicateur + multiplicateur;
         }
       }
-      document.getElementById("multiplier").innerHTML= "Multiplier x "+ affichMulti;
-      document.getElementById("nextMulti").innerHTML= "Buy: " + prix + " points";
-    };
-    //quand on clique sur le bouton multiplicateur
-    multi.addEventListener("click", function() {
-      augmenterMultiplicateur();
-    });
-
-    //bonus fonctionnement
-    function iGotBonus() {
-      if(score > 50){
+    document.getElementById("multiplier").innerHTML= "Multiplier x "+ affichMulti;
+    document.getElementById("nextMulti").innerHTML= "Buy: " + prix + " points";
+  });
+  //bonus fonctionnement
+  function iGotBonus() {
+    if(score > 50){
       score = score - 50;
       click = click * 2;
       getBonus = true;
-    
-      bonuss = document.getElementById("bonus");
-      bonuss.removeEventListener("click", iGotBonus);
-    
+      bon.removeEventListener("click", iGotBonus);
       var interval = setInterval(function() {
-    
         sec--;
-        bonuss.className = "nobonus";
-        bonuss.innerHTML = sec + " seconds left";
-    
+        bon.className = "nobonus";
+        bon.innerHTML = sec + " seconds left";
         if(sec < 1){
-          bonuss.addEventListener("click", iGotBonus);
+          bon.addEventListener("click", iGotBonus);
           getBonus = false;
           click = click / 2;
           clearInterval(interval);
-          bonuss.innerHTML = "Get bonus!";
-          bonuss.className = "rainbow-button";
+          bon.innerHTML = "Get bonus!";
+          bon.className = "rainbow-button";
+          sec =30;
         }
-    
       }, 1000);
-  }}
+    }
+  }
 document.getElementById("bonus").addEventListener("click", iGotBonus);
 
     //autoclick
@@ -121,6 +131,7 @@ document.getElementById("bonus").addEventListener("click", iGotBonus);
     }
   }
 
+
 //ETOILES GENEREES ALEATOIREMENT
 function freshDot(){
   this.obj = document.createElement("etoile");
@@ -150,6 +161,7 @@ if (shakeStartTime ==-1) return;
 var dt = Date.now()-shakeStartTime;
 if (dt>shakeDuration) {
   shakeStartTime = -1; 
+
   return;
 }
 var easingCoef = dt / shakeDuration;
@@ -158,6 +170,7 @@ ctx.save();
 var dx = easing*(Math.cos(dt*0.1 ) + Math.cos( dt *0.3115))*15;
 var dy = easing*(Math.sin(dt*0.05) + Math.sin(dt*0.057113))*15;
 ctx.translate(dx, dy);  
+
 }
 function postShake() {
   if (shakeStartTime ==-1) return;
