@@ -106,11 +106,16 @@ document.getElementById("bonus").addEventListener("click", iGotBonus);
   //vie qui diminue
   setInterval(function(){
     let health = document.getElementById("health")
-    health.value -= 20;
+    health.value -= 80;
     if (health.value === 0) {
-      console.log("game Over");
+      document.getElementById("gameOver").innerHTML="GAME OVER!!!!!";
+      document.getElementById("explosion").style.display="inline";
+      //console.log("game Over");
     }
-  },10000);
+    if (health.value != 0){
+      document.getElementById("gameOver").style.display="hidden";
+    };
+  },1000);
 
   function restoreLife(){
     if (score > prixRepair){
