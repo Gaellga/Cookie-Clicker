@@ -107,10 +107,10 @@ button{
   animation:slidebg 2s linear infinite;
 }
 #mon_canvas {
-  transform: rotate(-90deg);
+  transform: rotate(-25deg);
 }
 footer {
-  height: 50px;
+  height: 40px;
   width: 100%;
   position: fixed;
   bottom: 0px;

@@ -44,7 +44,7 @@ cli.addEventListener('click', function (){
         }
       }
       document.getElementById("multiplier").innerHTML= "Multiplier x "+ affichMulti;
-      document.getElementById("nextMulti").innerHTML= "Buy: " + prix + " cookies";
+      document.getElementById("nextMulti").innerHTML= "Buy: " + prix + " points";
     };
     //quand on clique sur le bouton multiplicateur
     multi.addEventListener("click", function() {
