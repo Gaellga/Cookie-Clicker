@@ -2,7 +2,7 @@ body {
     font-family: 'Black Ops One', cursive;
     margin-top: 2%;
     margin-bottom: 2%;
-    background: linear-gradient(210deg, #161527 30%, rgb(55, 39, 97) 55%, rgb(68, 64, 116) 75%, rgb(81, 118, 131) 85%, #008E9B 90%, rgb(56, 117, 108) 100%) center center fixed;
+    background: linear-gradient(210deg, #161527 30%, rgb(97, 39, 56) 55%,  75%, rgb(81, 118, 131) 85%, #008E9B 90%, rgb(56, 117, 108) 100%) center center fixed;
     background-size: cover;
     background-repeat: no-repeat;
     color: white;
@@ -21,14 +21,14 @@ h1 {
     font-size: 5em;
     margin-top: 2.5%;
     margin-bottom: 3%;
-    color: rgb(195, 189, 228);
+    color: rgb(255, 255, 255);
 }
 button{
   font-family: 'Aldrich', sans-serif;
-  color: rgb(226, 233, 235);
+  color: rgb(255, 255, 255);
   border-color: lightseagreen;
   text-shadow: 2px 0 0 lightseagreen, -2px 0 0 rgb(175, 217, 255), 0 2px 0 lightseagreen, 0 -2px 0 #fff, 1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;
-  background-image: linear-gradient(90deg, rgb(236, 100, 180) 0%, rgb(0, 47, 255) 49%, rgb(43, 178, 231) 80%, rgb(236, 100, 180) 100%);
+  background-image: linear-gradient(90deg, rgb(206, 77, 105) 0%, rgb(142, 151, 170) 30%, #09c, 80%, rgb(206, 77, 105) 100%);
   border-radius:10px;
   width: 300px;
   z-index: 10;
@@ -138,8 +138,52 @@ header{
   margin-left:35%;
 }
 #health{
+  margin-top:2%;
   width: 500px;
+  height:20px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
 }
 #credits {
   margin-top: 1%;
+}
+/*healthbar pour Chrome*/
+progress[value]::-webkit-progress-value {
+  background-image:
+	   -webkit-linear-gradient(-45deg, 
+	                           transparent 33%, rgba(0, 0, 0, .1) 33%, 
+	                           rgba(0,0, 0, .1) 66%, transparent 66%),
+	   -webkit-linear-gradient(top, 
+	                           rgba(255, 255, 255, .25), 
+	                           rgba(0, 0, 0, .25)),
+	   -webkit-linear-gradient(left, rgb(206, 77, 105), #09c);
+
+    border-radius: 2px; 
+    background-size: 35px 20px, 100% 100%, 100% 100%;
+}
+/*healthbar pour Firefox*/
+progress[value]::-moz-progress-bar { 
+  background-image:
+    -moz-linear-gradient(
+      135deg, 
+      transparent 33%, 
+      rgba(0, 0, 0, 0.1) 33%, 
+      rgba(0, 0, 0, 0.1) 66%, 
+      transparent 66% 
+    ),
+    -moz-linear-gradient(
+      top, 
+      rgba(255, 255, 255, 0.25), 
+      rgba(0, 0, 0, 0.25)
+    ),
+    -moz-linear-gradient(
+      left,  
+      rgb(206, 77, 105),
+      #09c
+    );
+
+  border-radius: 2px; 
+  background-size: 35px 20px, 100% 100%, 100% 100%; 
 }

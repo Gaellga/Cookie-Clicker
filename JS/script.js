@@ -7,7 +7,7 @@ var sec = 5;
 var prix = 50;
 var prixBonus = 50;
 var prixAuto = 20;
-var prixRepair = 1000;
+var prixRepair = 10;
 var cli = document.getElementById("clic");
 var multi = document.getElementById("multiplier");
 var auto = document.getElementById("autoclic");
@@ -22,6 +22,35 @@ if (score<1){
 else {
   var end = document.getElementById("multiplier");
   end.disabled = false;
+}
+//CODE DES BOUTONS ET DU SCORE
+// désactivation multi
+if (score<1){
+  var end = document.getElementById("multiplier");
+  end.disabled = true;
+}
+else {
+  var end = document.getElementById("multiplier");
+  end.disabled = false;
+}
+// désactivation bonus
+if (score<1){
+  var nd = document.getElementById("bonus");
+  nd.disabled = true;
+}
+else {
+  var nd = document.getElementById("bonus");
+  nd.disabled = false;
+}
+// désactivation autoclic
+
+if (score<500){
+  var nd = document.getElementById("autoclic");
+  nd.disabled = true;
+}
+else {
+  var nd = document.getElementById("autoclic");
+  nd.disabled = false;
 }
 
 
@@ -43,6 +72,23 @@ else {
 var end = document.getElementById("multiplier");
 end.disabled = false;
 }
+if (score<5000){
+  var nd = document.getElementById("bonus");
+  nd.disabled = true;
+}
+else {
+  var nd = document.getElementById("bonus");
+  nd.disabled = false;
+}
+
+if (score<500){
+  var d = document.getElementById("autoclic");
+  d.disabled = true;
+}
+else {
+  var d = document.getElementById("autoclic");
+  d.disabled = false;
+}
 }
 
 //on fait marcher les boutons
@@ -54,7 +100,7 @@ cli.addEventListener('click', function (){
     document.getElementById("multiplier").addEventListener("click", function augmenterMultiplicateur() {
     if (score-prix<0){
                var end = document.getElementById("multiplier");
-               end.disabled = false;
+               end.disabled = true;
              }else{
                   if(getBonus === false){
                   score = score -prix;
@@ -63,7 +109,9 @@ cli.addEventListener('click', function (){
                   click =  multiplicateur;
                   affichMulti++;
                   var end = document.getElementById("multiplier");
-                  end.disabled =true;
+                  end.disabled =false;
+                  var nd = document.getElementById("bonus");
+                  nd.disabled =false;
               } else if(getBonus === true) {
                   click = click + multiplicateur + multiplicateur;
 
@@ -78,10 +126,20 @@ cli.addEventListener('click', function (){
     //bonus fonctionnement
     function iGotBonus() {
       if(score > 5000){
+
       score = score - 5000;
       click = click * 2;
       getBonus = true;
-
+      var end = document.getElementById("multiplier");
+      end.disabled = true;
+      if (score<5000){
+        var nd = document.getElementById("bonus");
+        nd.disabled = true;
+      }
+      else {
+        var nd = document.getElementById("bonus");
+        nd.disabled = false;
+      }
       bonuss = document.getElementById("bonus");
       bonuss.removeEventListener("click", iGotBonus);
 
@@ -97,6 +155,7 @@ cli.addEventListener('click', function (){
           click = click / 2;
           sec =5;
           clearInterval(interval);
+
           bonuss.innerHTML = "Click to get bonus!";
           bonuss.className = "rainbow-button";
         }
@@ -109,9 +168,14 @@ document.getElementById("bonus").addEventListener("click", iGotBonus);
 
     function buyAutoclick() {
             if (alreadyPlayed=== false && score >= 500) {
-              var end = document.getElementById("multiplier");
-              end.disabled = true;
-
+              if (score<500){
+                var d = document.getElementById("autoclic");
+                d.disabled = true;
+              }
+              else {
+                var d = document.getElementById("autoclic");
+                d.disabled = false;
+              }
                 score = score - 500;
                 setInterval(function(){
                     if (score >= 200) {
@@ -120,6 +184,8 @@ document.getElementById("bonus").addEventListener("click", iGotBonus);
                     alreadyPlayed = true;
                     document.getElementById('affichage').innerHTML = "Score:" + score;
                 }, 1000);
+                var c = document.getElementById("autoclic");
+                c.disabled = true;
                 auto.innerHTML = "Autoclick> On";
                 document.getElementById('buyAuto').innerHTML = "";
             }
@@ -131,18 +197,20 @@ document.getElementById("bonus").addEventListener("click", iGotBonus);
 
 });
 
+
 //vie qui diminue
   setInterval(function(){
-    let health = document.getElementById("health")
+    let health = document.getElementById("health");
     health.value -= 20;
     if (health.value === 0) {
       console.log("game Over");
     }
-  },10000);
+  },2000);
 
   function restoreLife(){
+    console.log("clic");
     if (score > prixRepair){
-      let health = document.getElementById("health")
+      let health = document.getElementById("health");
       health.value += 100;
       score = score-prixRepair;
       prixRepair = prixRepair*2;
