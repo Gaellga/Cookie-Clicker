@@ -1,64 +1,145 @@
 body {
-    font-family: 'Courier New', Courier, monospace;
-    background-color: "red";
+    font-family: 'Black Ops One', cursive;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    background: linear-gradient(210deg, #161527 30%, rgb(55, 39, 97) 55%, rgb(68, 64, 116) 75%, rgb(81, 118, 131) 85%, #008E9B 90%, rgb(56, 117, 108) 100%) center center fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+    position: relative;
+    z-index: 0;
+    cursor: url('../img/cursor.png'), default;
 }
-
+.stars {
+  background-color: rgb(248, 229, 142);
+  position: fixed;
+  border-radius: 50%;
+  z-index: 5;
+}
 h1 {
     text-align: center;
-    font-size: 3em;
+    font-size: 5em;
     margin-top: 2.5%;
     margin-bottom: 3%;
+    color: rgb(195, 189, 228);
 }
-
-img {
-    width:25%;
+button{
+  font-family: 'Aldrich', sans-serif;
+  color: rgb(226, 233, 235);
+  border-color: lightseagreen;
+  text-shadow: 2px 0 0 lightseagreen, -2px 0 0 rgb(175, 217, 255), 0 2px 0 lightseagreen, 0 -2px 0 #fff, 1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;
+  background-image: linear-gradient(90deg, rgb(236, 100, 180) 0%, rgb(0, 47, 255) 49%, rgb(43, 178, 231) 80%, rgb(236, 100, 180) 100%);
+  border-radius:10px;
+  width: 300px;
+  z-index: 10;
+  cursor: url('../img/pointer.png'), default;
 }
-
-button {
-    padding: 2%;
-    width: 400px;
-    font-size: 2.8em;
-    margin : 2%;
-}
-
 #container {
     text-align:center;
+    position: relative;
+    z-index: 20;
 }
-
 #affichage {
-    font-size: 2em;
-    margin-bottom: 2%;
+    font-size: 2.3em;
 }
-
 #clic {
-    display: inline-block;
-    margin-bottom: 3%;
+    margin: auto;
+    width: 600px;
+    height: 450px;
 }
-
+.blink-image {
+  transform: scale(0.97, 0.97);
+  cursor: url('../img/pointer.png'), default;
+}
+.blink-image2 {
+  transform: scale(1, 1);
+  cursor: url('../img/pointer.png'), default;
+}
 #containerButtons {
     display: inline-flex;
+    justify-content: center;
+    flex-direction: column;
+    position:absolute;
+    margin-left: -45%;
+    margin-top: -25%;
 }
-#autoclic {
-    background-color: "orange";
-    color: orange;
+.buy {
+    margin-top: 5%;
+    font-family: 'Courier New', Courier, monospace;
 }
 .nobonus {
-	background-color: #ff0000;
+    color: #eb3737;
+    font-size:2em;
+    padding:4%;
+    margin-top: 20%;
+    height: 200%;
+    line-height: 1.5em;
 }
-
-.bonus {
-	background-color: #00FF00;
+.rainbow-button {
+  font-size: 2.5em;
+  line-height: 1.5em;
+  margin-top: 15%;
+  height: 130px;
 }
-
-#nextMulti {
-    margin-left: -43%;
+.rainbow-button:after {
+  content:attr(alt);
 }
-
-#buyBonus {
-    margin-top: -0.9%;
+.rainbow-button:hover {
+  animation:slidebg 2s linear infinite;
 }
-
-#buyAuto {
-    margin-left: +43%;
-    margin-top: -0.9%;
+@keyframes slidebg {
+  to {
+    background-position:20vw;
+  }
+}
+#reparation {
+  font-size: 1.8em;
+  line-height: 2em;
+  margin-right: -70%;
+  margin-top: 2%;
+  padding: 0.5%;
+  height: 130px;
+}
+#reparation:after {
+  content:attr(alt);
+}
+#reparation:hover {
+  animation:slidebg 2s linear infinite;
+}
+#mon_canvas {
+  transform: rotate(-25deg);
+}
+footer {
+  height: 50px;
+  width: 100%;
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  text-align: center;
+  background-color: rgb(58, 58, 58, 0.5);
+  z-index: 30;
+  color: rgb(208, 209, 209)
+}
+p {
+  z-index: 30;
+}
+#music {
+  position: absolute;
+  top: -30px;
+  right: 20px;
+  z-index: 40;
+}
+header{
+  z-index: 50;
+}
+#healthbar {
+  position: absolute;
+  margin-top:5%;
+  margin-left:35%;
+}
+#health{
+  width: 500px;
+}
+#credits {
+  margin-top: 1%;
 }
