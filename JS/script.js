@@ -109,7 +109,8 @@ document.getElementById("bonus").addEventListener("click", iGotBonus);
     health.value -= 80;
     if (health.value === 0) {
       document.getElementById("gameOver").innerHTML="GAME OVER!!!!!";
-      document.getElementById("explosion").style.display="inline";
+      document.getElementById("fondnoir").style.display="inline";
+      document.getElementById("mon_canvas").style.display="inline";
       //console.log("game Over");
     }
     if (health.value != 0){
