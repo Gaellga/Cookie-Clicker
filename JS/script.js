@@ -7,7 +7,7 @@ var sec = 30;
 var prix = 5;
 var prixBonus = 50;
 var prixAuto = 20;
-var prixRepair = 1000;
+var prixRepair = 10;
 var cli = document.getElementById("clic");
 var multi = document.getElementById("multiplier");
 var auto = document.getElementById("autoclic");
@@ -102,16 +102,24 @@ document.getElementById("bonus").addEventListener("click", iGotBonus);
     auto.addEventListener("click", function() {
         buyAutoclick();
     });
-
 });
+  //vie qui diminue
+  setInterval(function(){
+    let health = document.getElementById("health")
+    health.value -= 20;
+    if (health.value === 0) {
+      console.log("game Over");
+    }
+  },10000);
 
-setInterval(function(){
-  let health = document.getElementById("health")
-  health.value -= 20;
-  //function restoreHealth(){
-    //health.value
-  //}
-},10000);
+  function restoreLife(){
+    if (score > prixRepair){
+      let health = document.getElementById("health")
+      health.value += 100;
+      score = score-prixRepair;
+      prixRepair = prixRepair*2;
+    }
+  }
 
 //ETOILES GENEREES ALEATOIREMENT
 function freshDot(){
