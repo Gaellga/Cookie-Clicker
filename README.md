@@ -11,13 +11,13 @@ https://github.com/becodeorg/BXL-Johnson-3.9/tree/master/Projets/coockie-clicker
 
 ## Membres de la team
 
-* Dorian Vanderheyden | [Github](https://github.com/dorianbec)  
+* Dorian Vanderheyden (CSS, Javascript) | [Github](https://github.com/dorianbec)  
 
-* Gaëlle Gaban | [Github](https://github.com/Gaellga)    
+* Gaëlle Gaban (HTML/CSS/Canvas, Javascript) | [Github](https://github.com/Gaellga)    
 
-* Ilaria Fantini | [Github](https://github.com/IlariaFa)    
+* Ilaria Fantini (Javascript) | [Github](https://github.com/IlariaFa)    
 
-* Othman Moulila | [Github](https://github.com/luffy1140/)    
+* Othman Moulila (Javascript) | [Github](https://github.com/luffy1140/)    
 
 ## Contenu et langages utilisés  
 
