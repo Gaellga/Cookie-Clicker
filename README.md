@@ -25,6 +25,6 @@ https://github.com/becodeorg/BXL-Johnson-3.9/tree/master/Projets/coockie-clicker
 * CSS
 * Javascript  
 
-Codé de A à Z par notre équipe, avec l'aide de quelques tutos trouvés sur internet. Pour jouer, il suffit de se rendre sur la page [ici](https://ilariafa.github.io/Cookie-Clicker/) et de garder sa fusée en vie le plus longtemps possible !
+Codé de A à Z par notre équipe, avec l'aide de quelques tutos trouvés sur internet. Pour jouer, il suffit de se rendre sur la page [ici](https://gaellga.github.io/Rocket-Clicker/) et de garder sa fusée en vie le plus longtemps possible !
   
 ### Bon amusement !
