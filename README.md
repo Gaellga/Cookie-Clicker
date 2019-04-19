@@ -13,7 +13,7 @@ https://github.com/becodeorg/BXL-Johnson-3.9/tree/master/Projets/coockie-clicker
 
 * Dorian Vanderheyden (CSS, Javascript) | [Github](https://github.com/dorianbec)  
 
-* Gaëlle Gaban (HTML/CSS/Canvas, Javascript) | [Github](https://github.com/Gaellga)    
+* Gaëlle Gaban (HTML/CSS, Javascript, Canvas) | [Github](https://github.com/Gaellga)    
 
 * Ilaria Fantini (Javascript) | [Github](https://github.com/IlariaFa)    
 
